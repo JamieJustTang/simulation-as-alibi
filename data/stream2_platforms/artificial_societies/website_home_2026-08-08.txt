@@ -1,0 +1,19 @@
+Artificial Societies is an AI platform that builds networks of AI personas to simulate stakeholder opinions and audience reactions.
+
+Each artificial society is a purpose-built network of 300 to over 5,000 interconnected AI personas, constructed from real-world social behavior data.
+
+Achieving 95% opinion distribution accuracy and 90% persona internal coherence, the platform enables organisations to survey unreachable audiences, test sensitive strategies, and generate comprehensive insights for high-stakes decisions across strategic communications and enterprise marketing.
+
+Artificial Societies builds networks of AI personas to simulate stakeholder opinions and audience reactions, achieving 95% opinion distribution accuracy and 90% persona internal coherence for high-stakes strategic decisions.
+
+Artificial societies can be constructed from demographic specifications, lists of target organisations and job titles, or your own first-party data including CRM records and existing research.
+
+What traditionally requires lengthy recruitment, scheduling, and fieldwork can now be accomplished in a day, allowing you to iterate and refine your research in real-time.
+
+Beyond quantitative survey responses, every persona provides qualitative answers and is available to participate in follow-up interviews.
+
+This gives you both statistical confidence and the rich, human texture of open-ended feedback.
+
+The first ever large-scale societal simulation research paper, presented at IC2S2 2024 and published in the British Journal of Psychology.
+
+Strategic Comms Which messaging options land best with journalists, customers, and the public.

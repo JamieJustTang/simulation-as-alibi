@@ -1,0 +1,62 @@
+{
+  "n": 142,
+  "chi2": 16.6224,
+  "df": 4,
+  "p_value": 0.0023,
+  "cramers_V": 0.2419,
+  "r_EI_DV": -0.1411,
+  "p_EI_DV": 0.094,
+  "r_EI_RT": 0.1944,
+  "p_EI_RT": 0.021,
+  "EI_distribution": {
+    "Low": 36,
+    "Medium": 49,
+    "High": 57
+  },
+  "DV_distribution": {
+    "Full": 71,
+    "Partial": 54,
+    "Absent": 17
+  },
+  "absent_concentration": {
+    "high_ei_absent": 14,
+    "total_absent": 17,
+    "pct": 82.4
+  },
+  "arxiv_share_pct": 80,
+  "cross_tabulation": {
+    "Low": [
+      19,
+      15,
+      2
+    ],
+    "Medium": [
+      24,
+      24,
+      1
+    ],
+    "High": [
+      28,
+      15,
+      14
+    ]
+  },
+  "standardized_residuals": {
+    "Low": [
+      "+0.2",
+      "+0.4",
+      "-1.1"
+    ],
+    "Medium": [
+      "-0.1",
+      "+1.2",
+      "-2.0"
+    ],
+    "High": [
+      "-0.1",
+      "-1.4",
+      "+2.7"
+    ]
+  },
+  "cross_tabulation_note": "Rows: EI (Low/Medium/High). Columns: [DV_Full, DV_Partial, DV_Absent]. See cross_tabulation_ei_dv.csv."
+}
