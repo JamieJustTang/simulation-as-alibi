@@ -49,15 +49,19 @@ def wrap_text(x, y, lines, size=14, fill=INK, weight=400, leading=20, anchor="st
 
 
 def shell(title, subtitle, eyebrow, desc):
-    return [
+    title_lines = title.split("\n")
+    subtitle_y = 122 + 38 * (len(title_lines) - 1)
+    out = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="title desc">',
-        f'<title id="title">{escape(title)}</title>', f'<desc id="desc">{escape(desc)}</desc>',
+        f'<title id="title">{escape(title.replace(chr(10), " "))}</title>', f'<desc id="desc">{escape(desc)}</desc>',
         box(0, 0, W, H, PAPER, radius=0), box(20, 18, 860, 864, CARD, "#E7E1D7", 18),
         f'<g font-family="{FONT}">',
         t(52, 58, eyebrow, 12, RUST, 700, spacing=1.6),
-        t(52, 94, title, 25, INK, 760),
-        t(52, 122, subtitle, 14, MUTED, 400),
     ]
+    for i, title_line in enumerate(title_lines):
+        out.append(t(52, 94 + i * 38, title_line, 32 if len(title_lines) > 1 else 25, INK, 770))
+    out.append(t(52, subtitle_y, subtitle, 15, MUTED, 450))
+    return out
 
 
 def footer(data_note):
@@ -67,100 +71,84 @@ def footer(data_note):
 
 def pain_card():
     out = shell(
-        "The rules gain power as their authors disappear",
-        "LLM social simulation is moving from market experimentation toward public authority.",
+        "The rules gain power as\ntheir authors disappear",
+        "LLM social simulation moves from commercial experimentation toward public authority.",
         "01 · THE PAIN POINT",
         "Three domains of outsourcing and a matrix showing the absence of architecture-level disclosure across six governance frameworks.",
     )
-    out += [t(52, 157, "RISING POLITICAL-ECONOMIC & GOVERNANCE STAKES", 11, RUST, 700, spacing=1.2),
-            arrow(52, 174, 842, 174, RUST, 2)]
-    domains = [
-        ("COMMERCIAL", "Proprietary", "Academic credibility", "Self-regulation"),
-        ("MILITARY", "Classified", "Tactical objectivity", "Security exemption"),
-        ("GOVERNMENTAL", "Undocumented", "Policy neutrality", "Technical delegation"),
-    ]
-    for i, (domain, closure, epistemic, governance) in enumerate(domains):
-        x = 52 + i * 270
-        out += [box(x, 184, 238, 124, "#FAF7F1", "#E5DED3", 12),
-                t(x + 16, 210, domain, 11, RUST, 750, spacing=1.2),
-                t(x + 16, 238, closure, 18, INK, 750),
-                t(x + 16, 262, epistemic, 12, MUTED),
-                t(x + 16, 284, "Governance: " + governance, 11.5, TEAL, 650)]
-    out += [t(52, 348, "THE DISCLOSURE GAP", 11, RUST, 700, spacing=1.3),
-            t(52, 377, "None of six frameworks explicitly requires procedural authorship disclosure.", 18, INK, 720)]
-    frameworks = ["EU AI Act Art. 13", "NIST AI RMF 1.0", "DoD AI Strategy",
-                  "White House EO", "EU Emergency Mgmt", "China MOST Guidelines"]
-    dims = ["D1", "D2", "D3", "D4"]
-    labels = ["Topology", "Actions", "Sanctions", "Beneficiary"]
-    gx, gy, row_h, cell_w = 276, 414, 44, 72
-    for j, (dim, label) in enumerate(zip(dims, labels)):
-        cx = gx + j * cell_w
-        out += [t(cx + cell_w / 2, 418, dim, 12, TEAL, 750, "middle"),
-                t(cx + cell_w / 2, 436, label, 10, MUTED, 500, "middle")]
-    for i, framework in enumerate(frameworks):
-        yy = gy + 36 + i * row_h
-        out += [t(60, yy + 24, framework, 12, INK, 600)]
-        for j in range(4):
-            partial = i == 1 and j == 0
-            fill = ORANGE_L if partial else RUST_L
-            symbol = "PARTIAL" if partial else "×"
-            color = ORANGE if partial else RUST
-            out += [box(gx + j * cell_w + 5, yy + 5, cell_w - 10, 32, fill, radius=7),
-                    t(gx + j * cell_w + cell_w / 2, yy + 27, symbol, 10 if partial else 17, color, 750, "middle")]
-    out += [box(590, 470, 244, 218, "#F3E8DA", radius=14),
-            t(612, 502, "STRUCTURAL GAP", 11, RUST, 750, spacing=1.3),
-            t(612, 554, "0 / 6", 42, INK, 780),
-            *wrap_text(612, 582, ["frameworks contain an explicit", "architecture-level procedural", "authorship disclosure mechanism"], 13, MUTED, 500, 20),
-            t(612, 665, "The regulatory object is the model—", 11.5, RUST, 650),
-            t(612, 683, "not the authored social architecture.", 11.5, RUST, 650)]
+    out += [t(52, 202, "RISING POLITICAL-ECONOMIC & GOVERNANCE STAKES", 12, RUST, 720, spacing=1.1),
+            '<polyline points="74,338 338,310 602,270 826,226" fill="none" stroke="#416F75" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>',
+            arrow(602, 270, 826, 226, TEAL, 5)]
+    domains = [(170, 326, "01", "COMMERCIAL", "Proprietary", TEAL, TEAL_L),
+               (450, 292, "02", "MILITARY", "Classified", RUST, RUST_L),
+               (720, 247, "03", "GOVERNMENTAL", "Undocumented", ORANGE, ORANGE_L)]
+    for cx, cy, number, domain, closure, color, fill in domains:
+        out += [f'<circle cx="{cx}" cy="{cy}" r="34" fill="{color}"/>',
+                t(cx, cy + 8, number, 20, "#FFFFFF", 780, "middle"),
+                line(cx, cy + 34, cx, 386, color, 2, "3 5"),
+                box(cx - 108, 386, 216, 112, fill, "#DED8CF", 12),
+                t(cx, 420, domain, 12, color, 760, "middle", 1.0),
+                t(cx, 462, closure, 24, INK, 770, "middle")]
+    out += [line(52, 530, 848, 530, "#E5DED3"),
+            box(52, 558, 796, 220, "#F7F4EE", "#E5DED3", 14),
+            t(82, 596, "THE STRUCTURAL DISCLOSURE GAP", 12, RUST, 750, spacing=1.0),
+            t(82, 688, "0 / 6", 72, RUST, 790),
+            *wrap_text(330, 622, ["governance frameworks require explicit", "procedural authorship disclosure"], 22, INK, 730, 30),
+            t(330, 690, "The regulatory object remains the model—not the authored social architecture.", 12.5, MUTED, 550)]
+    gap_labels = [("D1", "Topology"), ("D2", "Actions"), ("D3", "Sanctions"), ("D4", "Beneficiary")]
+    for i, (code, label) in enumerate(gap_labels):
+        x = 330 + i * 125
+        out += [box(x, 718, 112, 38, RUST_L, radius=9),
+                t(x + 15, 743, code, 11, RUST, 760), t(x + 42, 743, label, 11, INK, 650)]
     out += footer("Evidence: institutional gap analysis of six frameworks and three cross-domain cases.")
     return out
 
 
 def audit_card():
     out = shell(
-        "Designer erasure concentrates at High EI",
-        "The pattern is threshold-like—not a smooth decline in visibility.",
+        "Designer erasure concentrates\nat High EI",
+        "A threshold effect—not a smooth decline in visibility.",
         "02 · THE AUDIT EVIDENCE · n = 142",
         "A three-by-three audit matrix crossing emergence intensity with designer visibility, highlighting High EI and absent designer attribution.",
     )
-    out += [t(52, 164, "DESIGNER VISIBILITY (DV)", 11, TEAL, 750, spacing=1.3)]
-    cols = [("FULL", TEAL_L, TEAL), ("PARTIAL", ORANGE_L, ORANGE), ("ABSENT", RUST_L, RUST)]
-    rows = ["LOW EI", "MEDIUM EI", "HIGH EI"]
-    values = [[(19, 53, "+0.2"), (15, 42, "+0.4"), (2, 6, "−1.1")],
-              [(24, 49, "−0.1"), (24, 49, "+1.2"), (1, 2, "−2.0")],
-              [(28, 49, "−0.1"), (15, 26, "−1.4"), (14, 25, "+2.7")]]
-    x0, y0, cw, rh = 178, 202, 160, 132
-    for j, (label, _, color) in enumerate(cols):
-        out += [t(x0 + j * cw + cw / 2, 188, label, 12, color, 750, "middle")]
-    out += [f'<text x="72" y="400" font-size="10.5" fill="{RUST}" font-weight="750" text-anchor="middle" letter-spacing="0.8" transform="rotate(-90 72 400)">EMERGENCE INTENSITY (EI)</text>']
-    for i, row in enumerate(rows):
-        out += [t(164, y0 + i * rh + 69, row, 12, INK, 750, "end")]
-        for j, (count, pct, residual) in enumerate(values[i]):
-            _, fill, color = cols[j]
-            x, yy = x0 + j * cw, y0 + i * rh
-            stroke, sw = (RUST, 3) if (i, j) == (2, 2) else ("#E4DED5", 1)
-            out += [box(x + 5, yy + 5, cw - 10, rh - 10, fill, stroke, 12, sw),
-                    t(x + cw / 2, yy + 51, count, 30, INK, 780, "middle"),
-                    t(x + cw / 2, yy + 78, f"{pct}% of row", 12, color, 700, "middle"),
-                    t(x + cw / 2, yy + 101, f"z = {residual}", 11, MUTED, 500, "middle")]
-    out += [box(686, 202, 164, 386, "#F3E8DA", radius=14),
-            t(706, 230, "THE CONCENTRATION", 10.5, RUST, 750, spacing=1.1),
-            t(706, 300, "82%", 48, INK, 790),
-            *wrap_text(706, 332, ["of all absent", "designer attribution", "occurs in High-EI", "papers"], 14, MUTED, 550, 22),
-            line(706, 434, 828, 434, "#D9C8B3"),
-            t(706, 466, "14 of 17", 22, RUST, 760),
-            t(706, 490, "absent-DV papers", 12, MUTED, 500),
-            t(706, 542, "4.4×", 25, INK, 760),
-            t(706, 566, "Low-EI absent rate", 11.5, MUTED, 500)]
-    out += [box(52, 630, 798, 142, "#F7F5EF", "#E5DED3", 14),
-            t(72, 657, "THRESHOLD, NOT GRADIENT", 11, RUST, 750, spacing=1.2),
-            t(72, 696, "χ² = 16.62", 22, INK, 760), t(236, 696, "p = .002", 22, INK, 760),
-            t(370, 696, "V = .242", 22, INK, 760), t(510, 696, "r = −.141", 22, INK, 760),
-            t(72, 728, "Categorical association is significant", 12, TEAL, 650),
-            t(510, 728, "Ordinal correlation is not (p = .094)", 12, MUTED, 650),
-            t(72, 754, "High EI is the regime where designer absence sharply departs from expectation (z = +2.7).", 12, RUST, 650)]
-    out += footer("Data: systematic coding of 142 LLM social simulation papers; row percentages and standardized residuals shown.")
+    out += [t(160, 214, "DESIGNER VISIBILITY (DV)", 12, TEAL, 760, spacing=1.0)]
+    columns = [("FULL", TEAL_L, TEAL), ("PARTIAL", ORANGE_L, ORANGE), ("ABSENT", RUST_L, RUST)]
+    matrix = [[(19, 53), (15, 42), (2, 6)], [(24, 49), (24, 49), (1, 2)], [(28, 49), (15, 26), (14, 25)]]
+    row_names = ["LOW EI", "MEDIUM EI", "HIGH EI"]
+    x0, y0, cw, rh = 158, 258, 145, 112
+    for j, (label, _, color) in enumerate(columns):
+        out.append(t(x0 + j * cw + cw / 2, 244, label, 12, color, 760, "middle"))
+    out.append(f'<text x="68" y="420" font-size="10.5" fill="{RUST}" font-weight="750" text-anchor="middle" letter-spacing="0.7" transform="rotate(-90 68 420)">EMERGENCE INTENSITY (EI)</text>')
+    for i, row in enumerate(matrix):
+        yy = y0 + i * rh
+        out.append(t(146, yy + 62, row_names[i], 12, INK, 750, "end"))
+        for j, (count, pct) in enumerate(row):
+            label, fill, color = columns[j]
+            x = x0 + j * cw
+            highlight = i == 2 and j == 2
+            out += [box(x + 5, yy + 5, cw - 10, rh - 10, fill, RUST if highlight else "#DED8CF", 11, 3 if highlight else 1),
+                    t(x + cw / 2, yy + 48, count, 30, INK, 790, "middle"),
+                    t(x + cw / 2, yy + 78, f"{pct}% of row", 13, color, 700, "middle")]
+            if highlight:
+                out.append(t(x + cw / 2, yy + 96, "z = +2.7", 10, RUST, 700, "middle"))
+    out += [box(616, 212, 232, 382, "#F3E8DA", "#E2D4C3", 15),
+            t(640, 245, "THE CONCENTRATION", 11, RUST, 760, spacing=0.9),
+            t(640, 330, "82%", 58, RUST, 800),
+            *wrap_text(640, 370, ["of all absent", "designer attribution", "occurs in High-EI", "papers"], 17, INK, 700, 25),
+            line(640, 478, 824, 478, "#D7C2A8"),
+            t(640, 522, "14 of 17", 28, RUST, 790),
+            t(640, 550, "absent-DV papers", 12, MUTED, 550),
+            t(640, 576, "are High EI", 12, MUTED, 550)]
+    out += [box(52, 630, 796, 166, "#F7F5EF", "#E2DDD4", 14),
+            t(76, 660, "THRESHOLD, NOT GRADIENT", 12, RUST, 760, spacing=1.0),
+            t(76, 708, "χ² = 16.62", 23, INK, 780),
+            t(262, 708, "p = .002", 23, INK, 780),
+            t(407, 708, "V = .242", 23, INK, 780),
+            t(558, 708, "r = −.141", 23, INK, 780),
+            t(76, 742, "Significant categorical association", 12, TEAL, 650),
+            t(558, 742, "Ordinal correlation is not (p = .094)", 12, MUTED, 650),
+            t(76, 774, "High EI is the regime where absent designer attribution departs sharply from expectation.", 12.5, RUST, 680)]
+    out += footer("Data: 142 LLM social simulation papers; cells show counts and row percentages.")
     return out
 
 

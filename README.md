@@ -45,6 +45,46 @@ authorship — and proposes Upstream Disclosure Obligations for Agent Societies
 
 ---
 
+## The argument, in three figures
+
+These square summaries follow the paper's argument from the governance problem,
+through the audit evidence, to the mechanism and proposed response.
+
+### 1. The pain point
+
+LLM social simulations increasingly inform consequential domains, while the
+procedural choices that produce their social order remain outside existing
+governance frameworks.
+
+<p align="center">
+  <img src="docs/social_cards/01_pain_point.png" alt="Governance gaps and rising stakes in LLM social simulation" width="720">
+</p>
+
+### 2. The audit evidence
+
+Across 142 papers, designer erasure concentrates where claims of emergence are
+strongest: 14 of the 17 papers with absent designer visibility fall in the
+High-EI group.
+
+<p align="center">
+  <img src="docs/social_cards/02_ei_dv_audit_editorial.png" alt="Emergence intensity by designer visibility audit matrix for 142 papers" width="720">
+</p>
+
+### 3. The mechanism and response
+
+The *Alibi Function* shows how emergence discourse can launder authorship,
+displace accountability, and extract legitimacy. UDOS answers with upstream
+disclosure of the interaction architecture before simulation outputs travel.
+
+<p align="center">
+  <img src="docs/social_cards/03_mechanism_udos.png" alt="The Alibi Function and Upstream Disclosure Obligations for Agent Societies" width="720">
+</p>
+
+Editable SVGs and the reproducible generator are available in
+[docs/social_cards](docs/social_cards/).
+
+---
+
 ## The audited corpus — paper catalog
 
 All 142 papers, each with title, venue, year, arXiv link (where available),
