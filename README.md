@@ -45,43 +45,44 @@ authorship — and proposes Upstream Disclosure Obligations for Agent Societies
 
 ---
 
-## The argument, in three figures
+## Research highlights
 
-These square summaries follow the paper's argument from the governance problem,
-through the audit evidence, to the mechanism and proposed response.
+> **LLM social simulations do not simply reveal social order. Their
+> architectures help produce it, but current AI governance rarely requires
+> simulation designers to disclose those choices.**
 
-### 1. The pain point
+### A governance gap with growing stakes
 
-LLM social simulations increasingly inform consequential domains, while the
-procedural choices that produce their social order remain outside existing
-governance frameworks.
+LLM social simulations now model public opinion, markets, and crisis response.
+Their outputs can inform high-stakes decisions, but governance frameworks do
+not yet capture procedural authorship.
 
 <p align="center">
   <img src="docs/social_cards/01_pain_point.png" alt="Governance gaps and rising stakes in LLM social simulation" width="720">
 </p>
 
-### 2. The audit evidence
+### Designer erasure in the literature
 
-Across 142 papers, designer erasure concentrates where claims of emergence are
-strongest: 14 of the 17 papers with absent designer visibility fall in the
-High-EI group.
+Our audit of 142 papers finds that designer erasure concentrates where claims
+of emergence are strongest. Fourteen of the 17 papers with absent designer
+visibility fall in the High-EI group.
 
 <p align="center">
   <img src="docs/social_cards/02_ei_dv_audit_editorial.png" alt="Emergence intensity by designer visibility audit matrix for 142 papers" width="720">
 </p>
 
-### 3. The mechanism and response
+### From diagnosis to disclosure
 
-The *Alibi Function* shows how emergence discourse can launder authorship,
-displace accountability, and extract legitimacy. UDOS answers with upstream
-disclosure of the interaction architecture before simulation outputs travel.
+The *Alibi Function* identifies three mechanisms: epistemic laundering,
+accountability displacement, and legitimacy extraction. UDOS requires
+researchers to disclose the interaction architecture before outputs travel.
 
 <p align="center">
   <img src="docs/social_cards/03_mechanism_udos.png" alt="The Alibi Function and Upstream Disclosure Obligations for Agent Societies" width="720">
 </p>
 
-Editable SVGs and the reproducible generator are available in
-[docs/social_cards](docs/social_cards/).
+*Download the editable figures or reproduce them from
+[docs/social_cards](docs/social_cards/).*
 
 ---
 
