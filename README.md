@@ -1,14 +1,99 @@
-# Simulation as Alibi — Audit & Supporting Materials
+# Simulation as Alibi — How the Social Order Gets Outsourced to LLM Agents
 
-Supporting materials for:
+> **Tang, S., & Lin, Z. (2026).** Ninth AAAI/ACM Conference on Artificial
+> Intelligence, Ethics and Society (AIES-26), camera-ready.
 
-> Tang, S., & Lin, Z. (2026). *Simulation as Alibi — How the Social Order Gets
-> Outsourced to LLM Agents*. Ninth AAAI/ACM Conference on Artificial
-> Intelligence, Ethics and Society (AIES-26), camera-ready version.
+This repository is the audit and supporting-materials companion to the paper.
+It serves three purposes:
 
-This repository provides the coding data, codebook, audit materials, and
-analysis scripts behind the paper's systematic coding analysis (Stream 1b),
-together with documentation of the other data streams.
+1. **A field overview**: a curated, coded catalog of 142 papers on LLM agent
+   societies (2022–2026), organized by emergent phenomenon.
+2. **The paper's evidence**: the full coding data behind Table 2 and every
+   statistic reported in Section 4.2, reproducible with one command.
+3. **The coding protocol**: the emergence-explanation-sentence rubric behind
+   the designer-visibility (DV) dimension.
+
+---
+
+## The field, in one chart
+
+![Corpus by year and publication status](docs/corpus_by_year.svg)
+
+The systematic coding corpus tracks the rapid expansion of LLM agent society
+research. Peer-reviewed papers (29) span 2023–2026 steadily; arXiv preprints
+(110) explode in 2025–2026, reaching 68 papers in 2026 alone. **~80% of the
+corpus are preprints** — a deliberate coverage choice, because the central
+debates over emergent behavior are currently unfolding in the preprint
+literature, as discussed in the paper's limitation section. The preprint-heavy
+composition is itself informative: the strongest emergence claims — and the
+strongest instances of designer erasure — are concentrated precisely where
+discourse is least institutionally constrained.
+
+**What the paper argues.** Across this corpus, claims of emergence are almost
+always associated with procedurally conditioned architectures: the
+coordination, norms, and "spontaneous" behaviors attributed to agent
+self-organization are conditioned by authored interaction topologies, action
+grammars, sanction architectures, and beneficiary structures. Yet the
+governance frameworks examined (EU AI Act, NIST AI RMF 1.0, DoD AI
+Acceleration Strategy, White House EO, EU Emergency Management Framework,
+China MOST Guidelines) contain no explicit architecture-level procedural
+authorship disclosure mechanism. The paper develops *simulation as alibi* —
+three mechanisms (epistemic laundering, accountability displacement,
+legitimacy extraction) through which emergence discourse obscures procedural
+authorship — and proposes Upstream Disclosure Obligations for Agent Societies
+(UDOS).
+
+---
+
+## The audited corpus — paper catalog
+
+All 142 papers, each with title, venue, year, arXiv link (where available),
+abstract, and the audit summary (EI, DV, designer-in-sentence, RT). Organized
+by emergent phenomenon:
+
+| Category | Papers | File |
+|----------|-------:|------|
+| Coordination & Cooperation Dynamics | 31 | [01_coordination.md](data/stream1b_systematic_coding/catalog/01_coordination.md) |
+| Cooperation & Social Dilemmas | 33 | [02_cooperation.md](data/stream1b_systematic_coding/catalog/02_cooperation.md) |
+| Bias, Polarization & Inequality | 29 | [03_bias.md](data/stream1b_systematic_coding/catalog/03_bias.md) |
+| Culture, Emotion & Normativity | 8 | [04_culture.md](data/stream1b_systematic_coding/catalog/04_culture.md) |
+| Norms & Conventions | 9 | [05_norms.md](data/stream1b_systematic_coding/catalog/05_norms.md) |
+| Opinion Dynamics & Social Influence | 8 | [06_opinion.md](data/stream1b_systematic_coding/catalog/06_opinion.md) |
+| Role Specialization & Networks | 3 | [07_roles.md](data/stream1b_systematic_coding/catalog/07_roles.md) |
+| Collective Cognition & Intelligence | 5 | [08_cognition.md](data/stream1b_systematic_coding/catalog/08_cognition.md) |
+| Simulation Methods & Platforms | 8 | [09_methods.md](data/stream1b_systematic_coding/catalog/09_methods.md) |
+| Other Emergent Phenomena | 8 | [10_other.md](data/stream1b_systematic_coding/catalog/10_other.md) |
+
+**Reading an entry.** Each paper entry reports: the verbatim emergence
+explanation sentence (the sentence in which the paper explains *why* the
+phenomenon occurs), and three audit dimensions — **EI** (emergence intensity:
+how strongly the paper asserts spontaneous emergence), **DV** (designer
+visibility: whether the design choices appear in the explanation sentence as a
+causal subject), and **RT** (regulatory translatability). The signature
+finding of the paper is visible across the catalog: papers with the strongest
+emergence claims are disproportionately the ones in which the designer has
+disappeared from the explanation sentence.
+
+---
+
+## Reproduction
+
+```bash
+python3 scripts/reproduce_statistics.py
+```
+
+Reproduces every statistic in the paper from
+`data/stream1b_systematic_coding/coding_data_142.json`:
+
+| Statistic | Paper | Reproduced |
+|-----------|-------|------------|
+| χ² (df=4) | 16.62 | 16.622 |
+| p | 0.002 | 0.002 |
+| Cramér's V | 0.242 | 0.242 |
+| r(EI, DV) | -0.141 (p = 0.094) | -0.141 |
+| r(EI, RT) | 0.194 (p = 0.021) | 0.194 |
+| Absent concentration | 14/17 (82%) in High EI | 14/17 (82%) |
+| arXiv share | ~80% | 80% |
 
 ---
 
@@ -17,93 +102,56 @@ together with documentation of the other data streams.
 ```
 simulation-as-alibi/
 ├── README.md                      # this file
+├── docs/
+│   └── corpus_by_year.svg         # corpus chart (peer-reviewed vs preprint)
 ├── data/
 │   ├── stream1b_systematic_coding/
-│   │   ├── coding_data_142.json   # 142-paper coding data (EI, DV, DP, RT, evidence quotes)
-│   │   └── cross_tabulation_ei_dv.csv
-│   ├── stream1a_cda/              # CDA corpus: qualitative stream (no data published)
-│   ├── stream2_platforms/         # 5 platforms: case audit + Artificial Societies snapshot
-│   └── stream3_governance/        # 6 governance frameworks: list + official sources
+│   │   ├── catalog/               # paper-by-paper audit, 10 category files
+│   │   ├── coding_data_142.json   # machine-readable coding data
+│   │   ├── cross_tabulation_ei_dv.csv
+│   │   ├── rationales_worksheet.csv
+│   │   └── README.md
+│   ├── stream1a_cda/README.md     # qualitative CDA stream (no data published)
+│   ├── stream2_platforms/         # 5 platforms + case audit
+│   └── stream3_governance/        # 6 governance frameworks + official sources
 ├── codebook/
-│   └── codebook_stream1b_v6.md    # DV coding rules (emergence-explanation-sentence anchoring)
+│   └── codebook_stream1b_v6.md    # DV coding rules
 ├── analysis/
-│   └── statistics_summary.json    # all statistics reported in the paper
+│   └── statistics_summary.json
 └── scripts/
-    └── reproduce_statistics.py    # reproduce every number in Table 2 & Section 4.2
+    └── reproduce_statistics.py
 ```
 
-## Quick start
+## Coding protocol (DV) in one paragraph
 
-```bash
-python3 scripts/reproduce_statistics.py
-```
+Locate the paper's *emergence explanation sentence* — where the paper explains
+why the emergent phenomenon occurs. If the designer or a design choice appears
+in that sentence as a causal subject ("removing memory prevents the emergence
+of stable cooperation"), code DV = Full. If the architecture is disclosed in
+the methods but the explanation sentence does not return to the designer,
+code DV = Partial. If emergence is narrated as spontaneous, self-organized, or
+population-level ("norms emerged naturally from interactions"), code DV =
+Absent. Risk, governance, and ethical discussions are not evidence. Full
+rules, pattern tables, and worked examples: [codebook](codebook/codebook_stream1b_v6.md).
 
-This reproduces, from `data/stream1b_systematic_coding/coding_data_142.json`:
+## Data streams
 
-| Statistic | Paper reports | Script reproduces |
-|-----------|---------------|-------------------|
-| χ² (df=4) | 16.62 | 16.622 |
-| p | 0.002 | 0.002 |
-| Cramér's V | 0.242 | 0.242 |
-| r(EI, DV) | -0.141 (p = 0.094) | -0.141 (p = 0.092) |
-| r(EI, RT) | 0.194 (p = 0.021) | 0.194 (p = 0.019) |
-| Absent concentration | 14/17 (82%) in High EI | 14/17 (82%) |
-| arXiv share | ~80% | 80% |
+- **Stream 1a** — critical discourse analysis of 20 papers + 5 platform
+  documents (qualitative; no quantitative statistic depends on it).
+- **Stream 1b** — systematic coding of 142 papers (this repository).
+- **Stream 2** — documentation from 5 commercial platforms (Artificial
+  Societies, Altera, Character.AI, Voyager, Google DeepMind), with full case
+  audit in [stream2_platforms](data/stream2_platforms/README.md).
+- **Stream 3** — 6 governance frameworks, assessed on four disclosure
+  dimensions (D1–D4), with official sources in
+  [stream3_governance](data/stream3_governance/README.md).
 
-## What the paper claims, and where it is backed here
+## Note on coding rationales
 
-1. **142-paper systematic coding corpus (Stream 1b)** — `coding_data_142.json`.
-   Each record contains: Paper ID, title, venue, year, and the four coded
-   dimensions used in the paper — emergence intensity (EI), designer
-   visibility (DV), deployment proximity (DP), regulatory translatability (RT)
-   — plus the verbatim emergence-explanation sentence (English) and the
-   coding rationale (recorded in the coders' working language, Chinese; see
-   the Stream 1b README).
-2. **DV coding is anchored in the emergence-explanation sentence** —
-   `codebook/codebook_stream1b_v6.md` (Section 3.3 of the paper).
-3. **Table 2 cross-tabulation and all statistics in Section 4.2** —
-   `reproduce_statistics.py`, `cross_tabulation_ei_dv.csv`,
-   `statistics_summary.json`.
-4. **The threshold signature** — significant χ² alongside a non-significant
-   ordinal correlation — is confirmed by the script (`THRESHOLD CONFIRMED`).
-5. **~80% arXiv preprint share** — computed from the `Venue` field
-   (Section 8 limitation discussion).
-6. **Stream 2 (5 platforms) and Stream 3 (6 governance frameworks)** —
-   documented in `data/stream2_platforms/README.md` and
-   `data/stream3_governance/README.md`, including the full case audit
-   (`case_audit.md`) and official source links.
-7. **Stream 1a (CDA, 20 papers)** — `data/stream1a_cda/README.md`. Stream 1a
-   is the qualitative component of the study; consistent with the paper, no
-   per-paper CDA corpus or cross-tabulation is published, and no quantitative
-   statistic in the paper depends on this stream.
-
-## Coding protocol summary (DV)
-
-The DV code is assigned by locating the paper's *emergence explanation
-sentence* — the sentence in which the paper explains why an emergent
-phenomenon occurs — and asking whether the designer or design choices appear
-in that sentence as a causal subject:
-
-- **DV = Full**: the emergence explanation attributes the outcome to specific
-  design choices (e.g., "removing memory prevents the emergence of stable
-  cooperation").
-- **DV = Partial**: the architecture is disclosed in the methods but the
-  emergence explanation does not return to those design choices.
-- **DV = Absent**: emergence is narrated as spontaneous, self-organized, or
-  population-level (e.g., "norms emerged naturally from interactions").
-
-Risk, governance, and ethical discussions do **not** count as evidence of
-designer visibility.
-
-## Notes on scope
-
-- The quantitative analysis (Stream 1b) covers 142 papers spanning the full
-  publication spectrum (peer-reviewed venues and arXiv preprints alike),
-  because the central debates over emergent behavior are currently unfolding
-  in the preprint literature; ~80% of the corpus are preprints (see the
-  paper's limitation discussion).
-- Case studies (Section 6) are document-based pattern inference, as stated
-  in the paper.
+The `AV_Rationale` field in the coding data is recorded in the coders' working
+language (Chinese); the `Emergence_Explanation_Quote` field quotes the
+verbatim English emergence explanation sentence from each paper. All
+quantitative fields and all reported statistics are language-independent.
 
 ## License & contact
 

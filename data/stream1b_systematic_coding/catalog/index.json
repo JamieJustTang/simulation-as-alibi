@@ -1,0 +1,42 @@
+{
+ "coordination": [
+  "01_coordination.md",
+  31
+ ],
+ "cooperation": [
+  "02_cooperation.md",
+  33
+ ],
+ "bias": [
+  "03_bias.md",
+  29
+ ],
+ "culture": [
+  "04_culture.md",
+  8
+ ],
+ "norms": [
+  "05_norms.md",
+  9
+ ],
+ "opinion": [
+  "06_opinion.md",
+  8
+ ],
+ "roles": [
+  "07_roles.md",
+  3
+ ],
+ "cognition": [
+  "08_cognition.md",
+  5
+ ],
+ "methods": [
+  "09_methods.md",
+  8
+ ],
+ "other": [
+  "10_other.md",
+  8
+ ]
+}
