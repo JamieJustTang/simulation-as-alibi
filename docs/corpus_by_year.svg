@@ -1,37 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420" font-family="Helvetica,Arial,sans-serif">
-<line x1="70" y1="360.0" x2="730" y2="360.0" stroke="#e0e0e0" stroke-width="1"/>
-<text x="60" y="364.0" text-anchor="end" font-size="12" fill="#555">0</text>
-<line x1="70" y1="300.7" x2="730" y2="300.7" stroke="#e0e0e0" stroke-width="1"/>
-<text x="60" y="304.7" text-anchor="end" font-size="12" fill="#555">13</text>
-<line x1="70" y1="241.5" x2="730" y2="241.5" stroke="#e0e0e0" stroke-width="1"/>
-<text x="60" y="245.5" text-anchor="end" font-size="12" fill="#555">26</text>
-<line x1="70" y1="182.2" x2="730" y2="182.2" stroke="#e0e0e0" stroke-width="1"/>
-<text x="60" y="186.2" text-anchor="end" font-size="12" fill="#555">39</text>
-<line x1="70" y1="122.9" x2="730" y2="122.9" stroke="#e0e0e0" stroke-width="1"/>
-<text x="60" y="126.9" text-anchor="end" font-size="12" fill="#555">52</text>
-<line x1="70" y1="63.7" x2="730" y2="63.7" stroke="#e0e0e0" stroke-width="1"/>
-<text x="60" y="67.7" text-anchor="end" font-size="12" fill="#555">65</text>
-<rect x="94.8" y="341.8" width="115.5" height="0.0" fill="#4E6E75"/>
-<rect x="94.8" y="360.0" width="115.5" height="0.0" fill="#D9A05B"/>
-<text x="152.5" y="380" text-anchor="middle" font-size="12" fill="#333">2023</text>
-<text x="152.5" y="335.8" text-anchor="middle" font-size="11" fill="#333">4</text>
-<rect x="259.8" y="287.1" width="115.5" height="0.0" fill="#4E6E75"/>
-<rect x="259.8" y="314.4" width="115.5" height="0.0" fill="#D9A05B"/>
-<text x="317.5" y="380" text-anchor="middle" font-size="12" fill="#333">2024</text>
-<text x="317.5" y="281.1" text-anchor="middle" font-size="11" fill="#333">16</text>
-<rect x="424.8" y="164.0" width="115.5" height="0.0" fill="#4E6E75"/>
-<rect x="424.8" y="214.1" width="115.5" height="0.0" fill="#D9A05B"/>
-<text x="482.5" y="380" text-anchor="middle" font-size="12" fill="#333">2025</text>
-<text x="482.5" y="158.0" text-anchor="middle" font-size="11" fill="#333">43</text>
-<rect x="589.8" y="13.5" width="115.5" height="0.0" fill="#4E6E75"/>
-<rect x="589.8" y="50.0" width="115.5" height="0.0" fill="#D9A05B"/>
-<text x="647.5" y="380" text-anchor="middle" font-size="12" fill="#333">2026</text>
-<text x="647.5" y="7.5" text-anchor="middle" font-size="11" fill="#333">76</text>
-<rect x="80" y="20" width="14" height="14" fill="#4E6E75"/>
-<text x="100" y="31" font-size="13" fill="#333">Peer-reviewed</text>
-<rect x="220" y="20" width="14" height="14" fill="#D9A05B"/>
-<text x="240" y="31" font-size="13" fill="#333">arXiv preprint</text>
-<text x="380.0" y="18" text-anchor="middle" font-size="16" font-weight="bold" fill="#222">Systematic coding corpus (n = 142) by year and publication status</text>
-<text x="30" y="205.0" text-anchor="middle" font-size="13" fill="#555" transform="rotate(-90 30 205.0)">Papers</text>
-<text x="380.0" y="410" text-anchor="middle" font-size="13" fill="#555">Year</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="440" viewBox="0 0 780 440" font-family="Helvetica,Arial,sans-serif">
+<line x1="70" y1="375.0" x2="750" y2="375.0" stroke="#e5e5e5" stroke-width="1"/>
+<text x="60" y="379.0" text-anchor="end" font-size="12" fill="#666">0</text>
+<line x1="70" y1="309.1" x2="750" y2="309.1" stroke="#e5e5e5" stroke-width="1"/>
+<text x="60" y="313.1" text-anchor="end" font-size="12" fill="#666">14</text>
+<line x1="70" y1="243.2" x2="750" y2="243.2" stroke="#e5e5e5" stroke-width="1"/>
+<text x="60" y="247.2" text-anchor="end" font-size="12" fill="#666">28</text>
+<line x1="70" y1="177.4" x2="750" y2="177.4" stroke="#e5e5e5" stroke-width="1"/>
+<text x="60" y="181.4" text-anchor="end" font-size="12" fill="#666">42</text>
+<line x1="70" y1="111.5" x2="750" y2="111.5" stroke="#e5e5e5" stroke-width="1"/>
+<text x="60" y="115.5" text-anchor="end" font-size="12" fill="#666">56</text>
+<line x1="70" y1="375.0" x2="750" y2="375.0" stroke="#333" stroke-width="1.5"/>
+<rect x="95.5" y="356.2" width="93.5" height="18.8" fill="#4E6E75"/>
+<rect x="95.5" y="356.2" width="93.5" height="0.0" fill="#D9A05B"/>
+<text x="142.2" y="397" text-anchor="middle" font-size="13" fill="#333">2023</text>
+<text x="142.2" y="350.2" text-anchor="middle" font-size="12" font-weight="bold" fill="#222">4</text>
+<rect x="265.5" y="346.8" width="93.5" height="28.2" fill="#4E6E75"/>
+<rect x="265.5" y="299.7" width="93.5" height="47.1" fill="#D9A05B"/>
+<text x="312.2" y="397" text-anchor="middle" font-size="13" fill="#333">2024</text>
+<text x="312.2" y="293.7" text-anchor="middle" font-size="12" font-weight="bold" fill="#222">16</text>
+<rect x="435.5" y="323.2" width="93.5" height="51.8" fill="#4E6E75"/>
+<rect x="435.5" y="172.6" width="93.5" height="150.6" fill="#D9A05B"/>
+<text x="482.2" y="397" text-anchor="middle" font-size="13" fill="#333">2025</text>
+<text x="482.2" y="166.6" text-anchor="middle" font-size="12" font-weight="bold" fill="#222">43</text>
+<rect x="605.5" y="337.4" width="93.5" height="37.6" fill="#4E6E75"/>
+<rect x="605.5" y="17.4" width="93.5" height="320.0" fill="#D9A05B"/>
+<text x="652.2" y="397" text-anchor="middle" font-size="13" fill="#333">2026</text>
+<text x="652.2" y="11.4" text-anchor="middle" font-size="12" font-weight="bold" fill="#222">76</text>
+<rect x="80" y="25" width="15" height="15" fill="#4E6E75"/>
+<text x="101" y="37" font-size="13" fill="#333">Peer-reviewed (29)</text>
+<rect x="300" y="25" width="15" height="15" fill="#D9A05B"/>
+<text x="321" y="37" font-size="13" fill="#333">arXiv preprint (110)</text>
+<text x="390.0" y="17" text-anchor="middle" font-size="16" font-weight="bold" fill="#222">Systematic coding corpus (n = 142) by year and publication status</text>
+<text x="25" y="215.0" text-anchor="middle" font-size="13" fill="#555" transform="rotate(-90 25 215.0)">Papers</text>
+<text x="390.0" y="428" text-anchor="middle" font-size="13" fill="#555">Year</text>
 </svg>
