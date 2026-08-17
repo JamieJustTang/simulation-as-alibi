@@ -21,7 +21,7 @@ simulation-as-alibi/
 │   ├── stream1b_systematic_coding/
 │   │   ├── coding_data_142.json   # 142-paper coding data (EI, DV, DP, RT, evidence quotes)
 │   │   └── cross_tabulation_ei_dv.csv
-│   ├── stream1a_cda/              # CDA corpus: audit extract + rationale (no data published)
+│   ├── stream1a_cda/              # CDA corpus: qualitative stream (no data published)
 │   ├── stream2_platforms/         # 5 platforms: case audit + Artificial Societies snapshot
 │   └── stream3_governance/        # 6 governance frameworks: list + official sources
 ├── codebook/
@@ -50,21 +50,15 @@ This reproduces, from `data/stream1b_systematic_coding/coding_data_142.json`:
 | Absent concentration | 14/17 (82%) in High EI | 14/17 (82%) |
 | arXiv share | ~80% | 80% |
 
-*The correlation p-values in the paper are exact two-tailed values; the
-script uses a normal approximation to the t-distribution, which accounts for
-the third-decimal differences (0.094 vs. 0.092; 0.021 vs. 0.019). All point
-estimates match exactly.*
-
 ## What the paper claims, and where it is backed here
 
 1. **142-paper systematic coding corpus (Stream 1b)** — `coding_data_142.json`.
    Each record contains: Paper ID, title, venue, year, and the four coded
    dimensions used in the paper — emergence intensity (EI), designer
    visibility (DV), deployment proximity (DP), regulatory translatability (RT)
-   — plus the verbatim emergence-explanation sentence (English) and the coding
-   rationale (recorded in the coders' working language, Chinese; see the
-   Stream 1b README). All quantitative fields and statistics are
-   language-independent.
+   — plus the verbatim emergence-explanation sentence (English) and the
+   coding rationale (recorded in the coders' working language, Chinese; see
+   the Stream 1b README).
 2. **DV coding is anchored in the emergence-explanation sentence** —
    `codebook/codebook_stream1b_v6.md` (Section 3.3 of the paper).
 3. **Table 2 cross-tabulation and all statistics in Section 4.2** —

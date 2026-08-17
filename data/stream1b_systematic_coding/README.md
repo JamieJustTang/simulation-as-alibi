@@ -15,17 +15,15 @@ Final coding data for the paper's systematic coding analysis.
   - `Emergence_Explanation_Quote` — verbatim emergence explanation sentence
   - `AV_Rationale` — one-line rationale for the DV code
 - `cross_tabulation_ei_dv.csv` — the Table 2 cross-tabulation with row totals.
-- `rationale_translation_worksheet.csv` — working sheet for the DV coding
-  rationales (see note below).
+- `rationales_worksheet.csv` — the DV coding rationales in tabular form.
 
 ## Note on coding rationales
 
 The `AV_Rationale` field records the coding rationale in the coders' working
 language (Chinese); the `Emergence_Explanation_Quote` field quotes the
-verbatim English emergence explanation sentence from each paper. The
-rationales are working-language records and are reproduced verbatim for
-transparency; all quantitative fields (EI, DV, DP, RT, venue, year) and all
-statistics derived from them are language-independent.
+verbatim English emergence explanation sentence from each paper. All
+quantitative fields (EI, DV, DP, RT, venue, year) and all statistics derived
+from them are language-independent.
 
 ## Correspondence with the paper
 
