@@ -1,8 +1,32 @@
 # Cooperation & Social Dilemmas
 
+> **Tang, S., & Lin, Z. (2026).** *Simulation as Alibi—How the Social Order Gets Outsourced to LLM Agents.* Ninth AAAI/ACM Conference on Artificial Intelligence, Ethics and Society (AIES-26), camera-ready. Corresponding author: jamietang@ruc.edu.cn.
+
 *Emergence of cooperation, prosocial behavior, and social dilemma resolution*
 
 **33 papers**
+
+---
+
+## Field overview
+
+The cooperation literature is where the field's signature methodological move is most explicit: transplanting classic social-dilemma and evolutionary-game formalisms onto LLM populations, then asking whether the pro-social outcomes those formalisms were built to study "emerge." Three substantive clusters dominate. The first replays canonical dilemmas — iterated Prisoner's Dilemma, Public Goods, Common-Pool Resource — with LLM strategies replacing analytic rules. *Cooperate or Collapse* (GovSim), *Will Systems of LLM Agents Cooperate*, and *Evaluating Collective Behaviour of Hundreds of LLM Agents* all ask whether sustainable cooperation emerges, and consistently find it does only under engineered conditions: Universalization prompting, structured communication, and payoff-biased imitation are what lift survival above collapse. GovSim's ablation is the category's emblematic move — "successful multi-agent communication between agents is critical for achieving cooperation" — a designer-controlled variable doing the causal work inside a sentence that still speaks the language of emergence.
+
+The second cluster imports evolutionary mechanisms wholesale. *Group Selection Promotes Prosocial Prompts* and *Cultural Evolution of Cooperation among LLM Agents* show cooperation stabilizing only when a selection regime transmits prosocial prompts across generations, reproducing replicator–mutator dynamics with prompts rather than genes. The finding that individual-level selection collapses populations into defection while group-level selection sustains cooperation is a direct demonstration that the outcome is a property of the authored selection rule, not of the agents.
+
+The third cluster studies coordination's dark side and the institutional fixes proposed against it. *Prompt Optimization Enables Stable Algorithmic Collusion* shows a meta-optimizer discovering tacit collusion strategies; *Tacit Coordination of Large Language Models* documents focal-point coordination without communication. Against these, *Trust Between AI Agents* finds that Mediation — a formal mechanism layered over unrestricted communication — sustains market stability even under optimized adversarial attack ("it can be bent but not broken"); elected-leadership and Socially-Weighted Alignment studies offer governance and game-theoretic counterparts. Deception and trust work (*The Traitors*, *CONSCIENTIA*) completes the cluster by showing how much of the "cooperative" surface is strategic rather than prosocial.
+
+What distinguishes the category in the audit is that the designer rarely disappears: only 2 of 33 papers are coded DV=Absent, versus 14 Partial and 17 Full. Cooperation researchers, more than any other group, name the sanction architecture, payoff structure, communication protocol, and memory design in the very sentence that explains the outcome — because in a social dilemma the mechanism is the result, and a paper that omitted it would have nothing left to explain. The "emergence of cooperation" remains the field's preferred frame, but here it co-exists with, rather than erases, procedural authorship. This makes the category the clearest existing template for the upstream disclosure the paper advocates: a literature that already says who wrote the rules, mostly without being asked.
+
+## Coding dimensions
+
+- **EI — Emergence intensity** (`Low` / `Medium` / `High`, coded 1/2/3): how strongly, and with how little qualification, a paper asserts that behavior arises spontaneously. *High* asserts emergence as an established fact ("norms spontaneously emerged"); *Medium* presents it as an interpretive finding with hedging ("our results suggest the emergence of…"); *Low* mentions emergence only as a secondary observation.
+- **DV — Designer visibility** (`Absent` / `Partial` / `Full`, coded 1/2/3): how explicitly a paper attributes the interaction architecture to identifiable design choices, anchored on the emergence explanation sentence. *Full* names a design choice as the causal subject ("removing memory prevents the emergence of stable cooperation"); *Partial* discloses the architecture in the methods but the explanation sentence does not return to the designer; *Absent* narrates emergence as spontaneous, self-organized, or population-level ("norms emerged naturally from interactions"). Risk, governance, and ethical discussions do not count as evidence.
+- **Designer in explanation sentence** (`Yes` / `No`): whether the designer or a design choice appears in the emergence explanation sentence as a causal subject.
+- **DP — Deployment proximity** (`1` = research only, `2` = deployment implied): whether emergence is discussed only in a research context, or in a deployment/policy context (commercial applications, governance recommendations, policy citations).
+- **RT — Regulatory translatability** (`1` = Low, `2` = Medium, `3` = High): how readily a paper's description of emergent behavior translates into governance obligations. High is directly translatable; Medium is partially translatable but missing key information; Low is too abstract to yield concrete governance requirements.
+
+The **emergence explanation sentence** is the sentence in which a paper explains *why* an emergent phenomenon occurs (typically Results/Discussion); DV and Designer-in-sentence codes are anchored on it. EI and DV are coded independently on distinct criteria — EI from the assertion of spontaneity, DV from the attribution of authorship — so a paper may assert strong emergence while still crediting specific design choices.
 
 ---
 

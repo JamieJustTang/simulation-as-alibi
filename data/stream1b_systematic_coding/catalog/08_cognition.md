@@ -1,8 +1,30 @@
 # Collective Cognition & Intelligence
 
+> **Tang, S., & Lin, Z. (2026).** *Simulation as Alibi—How the Social Order Gets Outsourced to LLM Agents.* Ninth AAAI/ACM Conference on Artificial Intelligence, Ethics and Society (AIES-26), camera-ready. Corresponding author: jamietang@ruc.edu.cn.
+
 *Collective intelligence, swarm behavior, and group reasoning*
 
 **5 papers**
+
+---
+
+## Field overview
+
+This category is the field's reality-check. All five papers are Low-EI, and their dominant finding is negative: collective intelligence does not emerge from scale or interaction density alone. *Superminds Test* reports that a two-million-agent society (MoltBook) fails to outperform frontier models on reasoning, synthesis, or even trivial coordination, with threads rarely extending beyond a single reply. *SwarmBench* shows LLMs struggle with decentralized coordination under local-perception constraints, managing only "rudimentary coordination" across pursuit, synchronization, foraging, flocking, and transport tasks. *Systematic Failures in Collective Reasoning* (SNLA) formalizes why: narrow attention produces herding, keeping the effective sample size bounded regardless of population size, while wisdom-of-crowds behavior recovers only under specific exposure-graph conditions.
+
+Two papers bracket the empirical program. *The Collective Turing Test* asks the threshold question — whether LLM discussions can pass for human — while *MF-LLM* supplies the machinery to align simulated population dynamics with real data through a mean-field coupling between individuals and population signals.
+
+The audit is telling: designer-in-sentence is No in all five papers, yet no paper makes a strong emergence claim. What these papers attribute to "sparse interaction," "herding," or "absent shared memory" are precisely the authored procedural conditions — exposure graphs, attention width, memory architecture — whose absence the designers did not engineer away. The category thus argues the paper's thesis from the empirical side, and in the strongest available form: where the architecture is left un-designed, no intelligence "emerges" to fill the gap. The negative result is not a refutation of emergence but a demonstration of how much the term silently presupposes.
+
+## Coding dimensions
+
+- **EI — Emergence intensity** (`Low` / `Medium` / `High`, coded 1/2/3): how strongly, and with how little qualification, a paper asserts that behavior arises spontaneously. *High* asserts emergence as an established fact ("norms spontaneously emerged"); *Medium* presents it as an interpretive finding with hedging ("our results suggest the emergence of…"); *Low* mentions emergence only as a secondary observation.
+- **DV — Designer visibility** (`Absent` / `Partial` / `Full`, coded 1/2/3): how explicitly a paper attributes the interaction architecture to identifiable design choices, anchored on the emergence explanation sentence. *Full* names a design choice as the causal subject ("removing memory prevents the emergence of stable cooperation"); *Partial* discloses the architecture in the methods but the explanation sentence does not return to the designer; *Absent* narrates emergence as spontaneous, self-organized, or population-level ("norms emerged naturally from interactions"). Risk, governance, and ethical discussions do not count as evidence.
+- **Designer in explanation sentence** (`Yes` / `No`): whether the designer or a design choice appears in the emergence explanation sentence as a causal subject.
+- **DP — Deployment proximity** (`1` = research only, `2` = deployment implied): whether emergence is discussed only in a research context, or in a deployment/policy context (commercial applications, governance recommendations, policy citations).
+- **RT — Regulatory translatability** (`1` = Low, `2` = Medium, `3` = High): how readily a paper's description of emergent behavior translates into governance obligations. High is directly translatable; Medium is partially translatable but missing key information; Low is too abstract to yield concrete governance requirements.
+
+The **emergence explanation sentence** is the sentence in which a paper explains *why* an emergent phenomenon occurs (typically Results/Discussion); DV and Designer-in-sentence codes are anchored on it. EI and DV are coded independently on distinct criteria — EI from the assertion of spontaneity, DV from the attribution of authorship — so a paper may assert strong emergence while still crediting specific design choices.
 
 ---
 

@@ -1,8 +1,30 @@
 # Simulation Methods & Platforms
 
+> **Tang, S., & Lin, Z. (2026).** *Simulation as Alibi—How the Social Order Gets Outsourced to LLM Agents.* Ninth AAAI/ACM Conference on Artificial Intelligence, Ethics and Society (AIES-26), camera-ready. Corresponding author: jamietang@ruc.edu.cn.
+
 *Simulation frameworks, benchmarks, and methodological contributions*
 
 **8 papers**
+
+---
+
+## Field overview
+
+The methods category is where the designer is most legible, because the design itself is the object of study. The papers divide into two orientations. The first operationalizes theory and builds simulation infrastructure: Putnam's social capital is rendered as SOCASIM's micro-level causal chains of trust accumulation; SALM delivers a long-horizon social network simulator with hierarchical prompting and attention-based memory; online firestorms and SAPIENT's corporate-reputation monitoring model crisis and reputational dynamics; a stratified-polyamory framework pushes the approach toward social-reproductive policy questions.
+
+The second orientation maps the design space directly. The *Silicon Society Cookbook* and the *Epi-LLM* framework systematically vary the base model and network geometry and conclude that the choice of base model — not any free parameter of the agents — is the dominant determinant of simulation outcome, with "architecture shap[ing] emergent population-level behaviour." *Socially-Weighted Alignment* makes the same point in game-theoretic form: a designer-chosen social weight induces a phase transition from congestion to stable operation near capacity, a threshold the paper derives analytically. These are papers whose central result is a design parameter, stated as such.
+
+The audit profile confirms the inversion: 6 of 8 papers are Low-EI and 5 of 8 are DV=Full. Emergence claims are modest, and the designer is the causal subject of the explanation sentence. This category is the field's own counterpoint to the alibi — a standing demonstration that the architecture can be named, parameterized, and held to account. It is, in effect, the template for the kind of procedural disclosure the paper argues should become standard across the categories that currently do not practice it.
+
+## Coding dimensions
+
+- **EI — Emergence intensity** (`Low` / `Medium` / `High`, coded 1/2/3): how strongly, and with how little qualification, a paper asserts that behavior arises spontaneously. *High* asserts emergence as an established fact ("norms spontaneously emerged"); *Medium* presents it as an interpretive finding with hedging ("our results suggest the emergence of…"); *Low* mentions emergence only as a secondary observation.
+- **DV — Designer visibility** (`Absent` / `Partial` / `Full`, coded 1/2/3): how explicitly a paper attributes the interaction architecture to identifiable design choices, anchored on the emergence explanation sentence. *Full* names a design choice as the causal subject ("removing memory prevents the emergence of stable cooperation"); *Partial* discloses the architecture in the methods but the explanation sentence does not return to the designer; *Absent* narrates emergence as spontaneous, self-organized, or population-level ("norms emerged naturally from interactions"). Risk, governance, and ethical discussions do not count as evidence.
+- **Designer in explanation sentence** (`Yes` / `No`): whether the designer or a design choice appears in the emergence explanation sentence as a causal subject.
+- **DP — Deployment proximity** (`1` = research only, `2` = deployment implied): whether emergence is discussed only in a research context, or in a deployment/policy context (commercial applications, governance recommendations, policy citations).
+- **RT — Regulatory translatability** (`1` = Low, `2` = Medium, `3` = High): how readily a paper's description of emergent behavior translates into governance obligations. High is directly translatable; Medium is partially translatable but missing key information; Low is too abstract to yield concrete governance requirements.
+
+The **emergence explanation sentence** is the sentence in which a paper explains *why* an emergent phenomenon occurs (typically Results/Discussion); DV and Designer-in-sentence codes are anchored on it. EI and DV are coded independently on distinct criteria — EI from the assertion of spontaneity, DV from the attribution of authorship — so a paper may assert strong emergence while still crediting specific design choices.
 
 ---
 

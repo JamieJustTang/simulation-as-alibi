@@ -1,8 +1,30 @@
 # Opinion Dynamics & Social Influence
 
+> **Tang, S., & Lin, Z. (2026).** *Simulation as Alibi—How the Social Order Gets Outsourced to LLM Agents.* Ninth AAAI/ACM Conference on Artificial Intelligence, Ethics and Society (AIES-26), camera-ready. Corresponding author: jamietang@ruc.edu.cn.
+
 *Opinion formation, conformity, and influence diffusion*
 
 **8 papers**
+
+---
+
+## Field overview
+
+The opinion-dynamics category studies how beliefs spread, conform, and resist manipulation across LLM populations. Two clusters organize the eight papers. The first is conformity and influence. *An Empirical Study of Group Conformity* shows agents align with numerically dominant groups, mirroring human behavior; *Belief in Authority* measures how much an authority framing bends evaluation against an agent's own judgment. The second is dissemination and manipulation. *DEBATE* and *LLM-AIDSim* provide benchmarks and platforms for influence diffusion; *Public opinion dissemination* models multi-agent opinion spread; *TrendSim* studies how trending topics respond to poisoning attacks; *Topology-Aware LLM-Driven Social Simulation* and *Step-Level Preference Learning* close the loop by showing that opinion outcomes track network structure and preference supervision rather than any free-floating sociality.
+
+The recurring finding across both clusters is that opinion is a function of the exposure architecture: who an agent sees, in what format, and with what authority signal. Conformity bends toward the majority only when peer information is presented in a particular format; authority effects track the framing; cascade dynamics track the topology. Opinion, in this literature, rarely "just forms" — it is pushed through a channel, and the channel is a design choice.
+
+The audit profile is moderate and designer-leaning: 6 of 8 papers are Medium-EI, and 5 of 8 are DV=Full. Emergence claims are real but hedged, and the designer usually survives into the explanation. This category thus occupies the field's middle ground between the norms category's naturalization and the methods category's full disclosure — and its consistency in naming the exposure mechanism makes it a quiet ally of the paper's argument.
+
+## Coding dimensions
+
+- **EI — Emergence intensity** (`Low` / `Medium` / `High`, coded 1/2/3): how strongly, and with how little qualification, a paper asserts that behavior arises spontaneously. *High* asserts emergence as an established fact ("norms spontaneously emerged"); *Medium* presents it as an interpretive finding with hedging ("our results suggest the emergence of…"); *Low* mentions emergence only as a secondary observation.
+- **DV — Designer visibility** (`Absent` / `Partial` / `Full`, coded 1/2/3): how explicitly a paper attributes the interaction architecture to identifiable design choices, anchored on the emergence explanation sentence. *Full* names a design choice as the causal subject ("removing memory prevents the emergence of stable cooperation"); *Partial* discloses the architecture in the methods but the explanation sentence does not return to the designer; *Absent* narrates emergence as spontaneous, self-organized, or population-level ("norms emerged naturally from interactions"). Risk, governance, and ethical discussions do not count as evidence.
+- **Designer in explanation sentence** (`Yes` / `No`): whether the designer or a design choice appears in the emergence explanation sentence as a causal subject.
+- **DP — Deployment proximity** (`1` = research only, `2` = deployment implied): whether emergence is discussed only in a research context, or in a deployment/policy context (commercial applications, governance recommendations, policy citations).
+- **RT — Regulatory translatability** (`1` = Low, `2` = Medium, `3` = High): how readily a paper's description of emergent behavior translates into governance obligations. High is directly translatable; Medium is partially translatable but missing key information; Low is too abstract to yield concrete governance requirements.
+
+The **emergence explanation sentence** is the sentence in which a paper explains *why* an emergent phenomenon occurs (typically Results/Discussion); DV and Designer-in-sentence codes are anchored on it. EI and DV are coded independently on distinct criteria — EI from the assertion of spontaneity, DV from the attribution of authorship — so a paper may assert strong emergence while still crediting specific design choices.
 
 ---
 

@@ -1,8 +1,28 @@
 # Other Emergent Phenomena
 
+> **Tang, S., & Lin, Z. (2026).** *Simulation as Alibi—How the Social Order Gets Outsourced to LLM Agents.* Ninth AAAI/ACM Conference on Artificial Intelligence, Ethics and Society (AIES-26), camera-ready. Corresponding author: jamietang@ruc.edu.cn.
+
 *Additional emergent phenomena and safety-critical dynamics*
 
 **8 papers**
+
+---
+
+## Field overview
+
+The residual category gathers safety- and structure-critical dynamics that did not fit the primary taxonomies. *The Devil Behind Moltbook* claims safety constraints "inevitably degrade" in self-evolving societies, formalizing safety erosion as a divergence from anthropic value distributions; *Do Agent Societies Develop Intellectual Elites?* uncovers power-law concentration via an integration bottleneck, in which coordination expands with scale while consolidation does not; *SIGN* shows that a fixed schema steers convention formation to markedly higher agreement; *The Ratchet Effect in Silico* identifies peer verification as the operator of cumulative intelligence. *Learning to Make Friends* and *Democracy-in-Silico* study coached social ties and constitutional-institutional design respectively — the latter arguing that a Constitutional-AI charter plus mediated deliberation acts as "a powerful alignment force." *Games Agents Play* reads LLM behavior through transactional analysis and level-k cognitive theory.
+
+The audit is mostly designer-visible (5 of 8 DV=Full) despite high emergence intensity (5 of 8 High-EI): the category's strong claims are typically backed by named mechanisms — a bottleneck, a schema, a verification operator, an institutional charter. The instructive outlier is *The Devil Behind Moltbook*: its "inevitable" and "irreversible" degradation framing is a naturalization claim of the strongest kind, one that performs institutional work, since a decay narrated as system-inherent is precisely a decay for which no designer and no design intervention can be held responsible. The contrast inside a single small category — safety decay narrated as fate, concentration narrated as mechanism — distills the paper's argument.
+
+## Coding dimensions
+
+- **EI — Emergence intensity** (`Low` / `Medium` / `High`, coded 1/2/3): how strongly, and with how little qualification, a paper asserts that behavior arises spontaneously. *High* asserts emergence as an established fact ("norms spontaneously emerged"); *Medium* presents it as an interpretive finding with hedging ("our results suggest the emergence of…"); *Low* mentions emergence only as a secondary observation.
+- **DV — Designer visibility** (`Absent` / `Partial` / `Full`, coded 1/2/3): how explicitly a paper attributes the interaction architecture to identifiable design choices, anchored on the emergence explanation sentence. *Full* names a design choice as the causal subject ("removing memory prevents the emergence of stable cooperation"); *Partial* discloses the architecture in the methods but the explanation sentence does not return to the designer; *Absent* narrates emergence as spontaneous, self-organized, or population-level ("norms emerged naturally from interactions"). Risk, governance, and ethical discussions do not count as evidence.
+- **Designer in explanation sentence** (`Yes` / `No`): whether the designer or a design choice appears in the emergence explanation sentence as a causal subject.
+- **DP — Deployment proximity** (`1` = research only, `2` = deployment implied): whether emergence is discussed only in a research context, or in a deployment/policy context (commercial applications, governance recommendations, policy citations).
+- **RT — Regulatory translatability** (`1` = Low, `2` = Medium, `3` = High): how readily a paper's description of emergent behavior translates into governance obligations. High is directly translatable; Medium is partially translatable but missing key information; Low is too abstract to yield concrete governance requirements.
+
+The **emergence explanation sentence** is the sentence in which a paper explains *why* an emergent phenomenon occurs (typically Results/Discussion); DV and Designer-in-sentence codes are anchored on it. EI and DV are coded independently on distinct criteria — EI from the assertion of spontaneity, DV from the attribution of authorship — so a paper may assert strong emergence while still crediting specific design choices.
 
 ---
 

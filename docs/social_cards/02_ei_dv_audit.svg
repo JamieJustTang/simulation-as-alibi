@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+<title id="title">Designer erasure concentrates at High EI</title>
+<desc id="desc">A three-by-three audit matrix crossing emergence intensity with designer visibility, highlighting High EI and absent designer attribution.</desc>
+<rect x="0" y="0" width="900" height="900" rx="0" fill="#F5F2EB" stroke="none" stroke-width="1"/>
+<rect x="20" y="18" width="860" height="864" rx="18" fill="#FFFEFB" stroke="#E7E1D7" stroke-width="1"/>
+<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif">
+<text x="52" y="58" font-size="12" fill="#9E3F2E" font-weight="700" text-anchor="start" letter-spacing="1.6">02 · THE AUDIT EVIDENCE · n = 142</text>
+<text x="52" y="94" font-size="25" fill="#17212B" font-weight="760" text-anchor="start">Designer erasure concentrates at High EI</text>
+<text x="52" y="122" font-size="14" fill="#68737D" font-weight="400" text-anchor="start">The pattern is threshold-like—not a smooth decline in visibility.</text>
+<text x="52" y="164" font-size="11" fill="#416F75" font-weight="750" text-anchor="start" letter-spacing="1.3">DESIGNER VISIBILITY (DV)</text>
+<text x="258.0" y="188" font-size="12" fill="#416F75" font-weight="750" text-anchor="middle">FULL</text>
+<text x="418.0" y="188" font-size="12" fill="#D98B3A" font-weight="750" text-anchor="middle">PARTIAL</text>
+<text x="578.0" y="188" font-size="12" fill="#9E3F2E" font-weight="750" text-anchor="middle">ABSENT</text>
+<text x="72" y="400" font-size="10.5" fill="#9E3F2E" font-weight="750" text-anchor="middle" letter-spacing="0.8" transform="rotate(-90 72 400)">EMERGENCE INTENSITY (EI)</text>
+<text x="164" y="271" font-size="12" fill="#17212B" font-weight="750" text-anchor="end">LOW EI</text>
+<rect x="183" y="207" width="150" height="122" rx="12" fill="#DDE9E7" stroke="#E4DED5" stroke-width="1"/>
+<text x="258.0" y="253" font-size="30" fill="#17212B" font-weight="780" text-anchor="middle">19</text>
+<text x="258.0" y="280" font-size="12" fill="#416F75" font-weight="700" text-anchor="middle">53% of row</text>
+<text x="258.0" y="303" font-size="11" fill="#68737D" font-weight="500" text-anchor="middle">z = +0.2</text>
+<rect x="343" y="207" width="150" height="122" rx="12" fill="#F3E4CF" stroke="#E4DED5" stroke-width="1"/>
+<text x="418.0" y="253" font-size="30" fill="#17212B" font-weight="780" text-anchor="middle">15</text>
+<text x="418.0" y="280" font-size="12" fill="#D98B3A" font-weight="700" text-anchor="middle">42% of row</text>
+<text x="418.0" y="303" font-size="11" fill="#68737D" font-weight="500" text-anchor="middle">z = +0.4</text>
+<rect x="503" y="207" width="150" height="122" rx="12" fill="#F2DEDA" stroke="#E4DED5" stroke-width="1"/>
+<text x="578.0" y="253" font-size="30" fill="#17212B" font-weight="780" text-anchor="middle">2</text>
+<text x="578.0" y="280" font-size="12" fill="#9E3F2E" font-weight="700" text-anchor="middle">6% of row</text>
+<text x="578.0" y="303" font-size="11" fill="#68737D" font-weight="500" text-anchor="middle">z = −1.1</text>
+<text x="164" y="403" font-size="12" fill="#17212B" font-weight="750" text-anchor="end">MEDIUM EI</text>
+<rect x="183" y="339" width="150" height="122" rx="12" fill="#DDE9E7" stroke="#E4DED5" stroke-width="1"/>
+<text x="258.0" y="385" font-size="30" fill="#17212B" font-weight="780" text-anchor="middle">24</text>
+<text x="258.0" y="412" font-size="12" fill="#416F75" font-weight="700" text-anchor="middle">49% of row</text>
+<text x="258.0" y="435" font-size="11" fill="#68737D" font-weight="500" text-anchor="middle">z = −0.1</text>
+<rect x="343" y="339" width="150" height="122" rx="12" fill="#F3E4CF" stroke="#E4DED5" stroke-width="1"/>
+<text x="418.0" y="385" font-size="30" fill="#17212B" font-weight="780" text-anchor="middle">24</text>
+<text x="418.0" y="412" font-size="12" fill="#D98B3A" font-weight="700" text-anchor="middle">49% of row</text>
+<text x="418.0" y="435" font-size="11" fill="#68737D" font-weight="500" text-anchor="middle">z = +1.2</text>
+<rect x="503" y="339" width="150" height="122" rx="12" fill="#F2DEDA" stroke="#E4DED5" stroke-width="1"/>
+<text x="578.0" y="385" font-size="30" fill="#17212B" font-weight="780" text-anchor="middle">1</text>
+<text x="578.0" y="412" font-size="12" fill="#9E3F2E" font-weight="700" text-anchor="middle">2% of row</text>
+<text x="578.0" y="435" font-size="11" fill="#68737D" font-weight="500" text-anchor="middle">z = −2.0</text>
+<text x="164" y="535" font-size="12" fill="#17212B" font-weight="750" text-anchor="end">HIGH EI</text>
+<rect x="183" y="471" width="150" height="122" rx="12" fill="#DDE9E7" stroke="#E4DED5" stroke-width="1"/>
+<text x="258.0" y="517" font-size="30" fill="#17212B" font-weight="780" text-anchor="middle">28</text>
+<text x="258.0" y="544" font-size="12" fill="#416F75" font-weight="700" text-anchor="middle">49% of row</text>
+<text x="258.0" y="567" font-size="11" fill="#68737D" font-weight="500" text-anchor="middle">z = −0.1</text>
+<rect x="343" y="471" width="150" height="122" rx="12" fill="#F3E4CF" stroke="#E4DED5" stroke-width="1"/>
+<text x="418.0" y="517" font-size="30" fill="#17212B" font-weight="780" text-anchor="middle">15</text>
+<text x="418.0" y="544" font-size="12" fill="#D98B3A" font-weight="700" text-anchor="middle">26% of row</text>
+<text x="418.0" y="567" font-size="11" fill="#68737D" font-weight="500" text-anchor="middle">z = −1.4</text>
+<rect x="503" y="471" width="150" height="122" rx="12" fill="#F2DEDA" stroke="#9E3F2E" stroke-width="3"/>
+<text x="578.0" y="517" font-size="30" fill="#17212B" font-weight="780" text-anchor="middle">14</text>
+<text x="578.0" y="544" font-size="12" fill="#9E3F2E" font-weight="700" text-anchor="middle">25% of row</text>
+<text x="578.0" y="567" font-size="11" fill="#68737D" font-weight="500" text-anchor="middle">z = +2.7</text>
+<rect x="686" y="202" width="164" height="386" rx="14" fill="#F3E8DA" stroke="none" stroke-width="1"/>
+<text x="706" y="230" font-size="10.5" fill="#9E3F2E" font-weight="750" text-anchor="start" letter-spacing="1.1">THE CONCENTRATION</text>
+<text x="706" y="300" font-size="48" fill="#17212B" font-weight="790" text-anchor="start">82%</text>
+<text x="706" y="332" font-size="14" fill="#68737D" font-weight="550" text-anchor="start">of all absent</text>
+<text x="706" y="354" font-size="14" fill="#68737D" font-weight="550" text-anchor="start">designer attribution</text>
+<text x="706" y="376" font-size="14" fill="#68737D" font-weight="550" text-anchor="start">occurs in High-EI</text>
+<text x="706" y="398" font-size="14" fill="#68737D" font-weight="550" text-anchor="start">papers</text>
+<line x1="706" y1="434" x2="828" y2="434" stroke="#D9C8B3" stroke-width="1"/>
+<text x="706" y="466" font-size="22" fill="#9E3F2E" font-weight="760" text-anchor="start">14 of 17</text>
+<text x="706" y="490" font-size="12" fill="#68737D" font-weight="500" text-anchor="start">absent-DV papers</text>
+<text x="706" y="542" font-size="25" fill="#17212B" font-weight="760" text-anchor="start">4.4×</text>
+<text x="706" y="566" font-size="11.5" fill="#68737D" font-weight="500" text-anchor="start">Low-EI absent rate</text>
+<rect x="52" y="630" width="798" height="142" rx="14" fill="#F7F5EF" stroke="#E5DED3" stroke-width="1"/>
+<text x="72" y="657" font-size="11" fill="#9E3F2E" font-weight="750" text-anchor="start" letter-spacing="1.2">THRESHOLD, NOT GRADIENT</text>
+<text x="72" y="696" font-size="22" fill="#17212B" font-weight="760" text-anchor="start">χ² = 16.62</text>
+<text x="236" y="696" font-size="22" fill="#17212B" font-weight="760" text-anchor="start">p = .002</text>
+<text x="370" y="696" font-size="22" fill="#17212B" font-weight="760" text-anchor="start">V = .242</text>
+<text x="510" y="696" font-size="22" fill="#17212B" font-weight="760" text-anchor="start">r = −.141</text>
+<text x="72" y="728" font-size="12" fill="#416F75" font-weight="650" text-anchor="start">Categorical association is significant</text>
+<text x="510" y="728" font-size="12" fill="#68737D" font-weight="650" text-anchor="start">Ordinal correlation is not (p = .094)</text>
+<text x="72" y="754" font-size="12" fill="#9E3F2E" font-weight="650" text-anchor="start">High EI is the regime where designer absence sharply departs from expectation (z = +2.7).</text>
+<line x1="52" y1="818" x2="848" y2="818" stroke="#E7E1D7" stroke-width="1"/>
+<text x="52" y="842" font-size="10.5" fill="#68737D" font-weight="400" text-anchor="start">Data: systematic coding of 142 LLM social simulation papers; row percentages and standardized residuals shown.</text>
+<text x="52" y="864" font-size="10.5" fill="#17212B" font-weight="650" text-anchor="start">Citation: Tang, S. &amp; Lin, Z. (2026). Simulation as Alibi: How the Social Order Gets Outsourced to LLM Agents. AIES ’26.</text>
+</g>
+</svg>

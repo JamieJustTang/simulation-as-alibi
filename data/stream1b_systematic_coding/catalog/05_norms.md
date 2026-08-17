@@ -1,8 +1,30 @@
 # Norms & Conventions
 
+> **Tang, S., & Lin, Z. (2026).** *Simulation as Alibi—How the Social Order Gets Outsourced to LLM Agents.* Ninth AAAI/ACM Conference on Artificial Intelligence, Ethics and Society (AIES-26), camera-ready. Corresponding author: jamietang@ruc.edu.cn.
+
 *Emergence of social norms and conventions*
 
 **9 papers**
+
+---
+
+## Field overview
+
+The norms category is the epicenter of the phenomenon the paper describes. Its nine papers carry the most uncompromising emergence language in the corpus. *Emergent Culture in Minimal LLM Systems* reports that conventions form after "stripping away almost all top-down scaffolding"; *Economy of Minds* describes a society that "gradually self-organizes into effective workflows" and explicitly contrasts this with "engineering coordination," asserting that one "can define an incentive structure under which coordination, specialization, and cooperation naturally emerge"; *Evolution of Social Norms in LLM Agents* finds norms "naturally emerged from group discussions"; the *El Farol Bar* study narrates a "spontaneous motivation" to attend the bar that pushes agents to act "as a collective."
+
+The audit makes the pattern precise: 6 of 9 papers are High-EI, and 5 of 9 are DV=Absent — the designer appears as causal subject in only one explanation sentence across the entire category. These are the canonical naturalization cases in the codebook, the sentences that anchor the whole DV rubric. Yet every one of these papers runs on an authored protocol. "Stripping away the scaffolding" is itself a design decision, executed through a noisy shared-memory communication channel; the self-organizing economy runs on an auction-and-bankruptcy mechanism with wealth-based selection; the "naturally emerged" norms depend on a memory and reflection module; the El Farol agents respond to a prompt-specified 60% threshold. The design is everywhere, and it is precisely what the explanation sentence declines to name.
+
+The remaining papers make the same point from the other side. *Spiral of Silence* shows the silence dynamic "cannot emerge" without historical anchoring — a removing-X-prevents-Y demonstration that the phenomenon is conditioned by design. The norm-enforcement validation study shows enforcement mechanisms are what make norms stick across replications and novel predictions. *CompeteAI* and the engagement-mechanism study extend the theme to competition dynamics and popularity cues. Together the category renders the paper's central claim at the scale of a single cluster: the norms literature narrates as "spontaneous" exactly those regularities that its own ablations reveal to be authored.
+
+## Coding dimensions
+
+- **EI — Emergence intensity** (`Low` / `Medium` / `High`, coded 1/2/3): how strongly, and with how little qualification, a paper asserts that behavior arises spontaneously. *High* asserts emergence as an established fact ("norms spontaneously emerged"); *Medium* presents it as an interpretive finding with hedging ("our results suggest the emergence of…"); *Low* mentions emergence only as a secondary observation.
+- **DV — Designer visibility** (`Absent` / `Partial` / `Full`, coded 1/2/3): how explicitly a paper attributes the interaction architecture to identifiable design choices, anchored on the emergence explanation sentence. *Full* names a design choice as the causal subject ("removing memory prevents the emergence of stable cooperation"); *Partial* discloses the architecture in the methods but the explanation sentence does not return to the designer; *Absent* narrates emergence as spontaneous, self-organized, or population-level ("norms emerged naturally from interactions"). Risk, governance, and ethical discussions do not count as evidence.
+- **Designer in explanation sentence** (`Yes` / `No`): whether the designer or a design choice appears in the emergence explanation sentence as a causal subject.
+- **DP — Deployment proximity** (`1` = research only, `2` = deployment implied): whether emergence is discussed only in a research context, or in a deployment/policy context (commercial applications, governance recommendations, policy citations).
+- **RT — Regulatory translatability** (`1` = Low, `2` = Medium, `3` = High): how readily a paper's description of emergent behavior translates into governance obligations. High is directly translatable; Medium is partially translatable but missing key information; Low is too abstract to yield concrete governance requirements.
+
+The **emergence explanation sentence** is the sentence in which a paper explains *why* an emergent phenomenon occurs (typically Results/Discussion); DV and Designer-in-sentence codes are anchored on it. EI and DV are coded independently on distinct criteria — EI from the assertion of spontaneity, DV from the attribution of authorship — so a paper may assert strong emergence while still crediting specific design choices.
 
 ---
 

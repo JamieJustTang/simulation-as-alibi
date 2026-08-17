@@ -1,8 +1,30 @@
 # Culture, Emotion & Normativity
 
+> **Tang, S., & Lin, Z. (2026).** *Simulation as Alibi—How the Social Order Gets Outsourced to LLM Agents.* Ninth AAAI/ACM Conference on Artificial Intelligence, Ethics and Society (AIES-26), camera-ready. Corresponding author: jamietang@ruc.edu.cn.
+
 *Cultural emergence, emotion diffusion, and normative dynamics*
 
 **8 papers**
+
+---
+
+## Field overview
+
+A compact category spanning the cultural and affective substrate that the larger categories take for granted. *TerraLingua* is the corpus's clearest case of designer-visible emergence: in a resource-constrained ecology with limited lifespans, cumulative culture is explicitly attributed to an authored artifact mechanism — agents create persistent objects that outlive them and shape later interaction, and an "AI Anthropologist" traces how those artifacts accumulate into norms, division of labor, and governance attempts. The contrast with the norms category's "spontaneous emergence" could hardly be sharper: here the carrier of culture is named, and it is a design choice.
+
+Around TerraLingua, two lines of work radiate. The dissemination line — *MOSAIC* and *MIDSim* — models how content and emotion move through LLM populations, asking whether agents "simply copy the decisions of agents who act before them" and thereby produce power-law engagement patterns. The interaction line extends the field's trust and coalition literatures: *When Agents Lie* separates private intent from public announcement to show premeditation dominates deviation, and *Digital Pantheon* simulates coalition formation under partisan incentive structures. Two theory-revival efforts complete the category: an extension of Homans' social-exchange theory tests whether classical sociological mechanisms survive in LLM form, and *The Wisdom of Partisan Crowds*, alongside a desire-driven emotional cognitive-modeling framework, tests whether LLM collectives reproduce human affective and deliberative patterns.
+
+The audit profile is balanced — 4 Partial and 4 Full DV, with no Absent codes — reflecting a small literature that has not produced the strong naturalization claims found in the norms and coordination categories. Cultural and emotional papers tend to credit the mechanism (artifacts, personas, graph structure) in the very sentence that explains the outcome. Culture, the phenomenon one might most expect to be narrated as something that "just grows," is instead the place where the field most consistently names what carries it — leaving little room for the alibi's strongest form.
+
+## Coding dimensions
+
+- **EI — Emergence intensity** (`Low` / `Medium` / `High`, coded 1/2/3): how strongly, and with how little qualification, a paper asserts that behavior arises spontaneously. *High* asserts emergence as an established fact ("norms spontaneously emerged"); *Medium* presents it as an interpretive finding with hedging ("our results suggest the emergence of…"); *Low* mentions emergence only as a secondary observation.
+- **DV — Designer visibility** (`Absent` / `Partial` / `Full`, coded 1/2/3): how explicitly a paper attributes the interaction architecture to identifiable design choices, anchored on the emergence explanation sentence. *Full* names a design choice as the causal subject ("removing memory prevents the emergence of stable cooperation"); *Partial* discloses the architecture in the methods but the explanation sentence does not return to the designer; *Absent* narrates emergence as spontaneous, self-organized, or population-level ("norms emerged naturally from interactions"). Risk, governance, and ethical discussions do not count as evidence.
+- **Designer in explanation sentence** (`Yes` / `No`): whether the designer or a design choice appears in the emergence explanation sentence as a causal subject.
+- **DP — Deployment proximity** (`1` = research only, `2` = deployment implied): whether emergence is discussed only in a research context, or in a deployment/policy context (commercial applications, governance recommendations, policy citations).
+- **RT — Regulatory translatability** (`1` = Low, `2` = Medium, `3` = High): how readily a paper's description of emergent behavior translates into governance obligations. High is directly translatable; Medium is partially translatable but missing key information; Low is too abstract to yield concrete governance requirements.
+
+The **emergence explanation sentence** is the sentence in which a paper explains *why* an emergent phenomenon occurs (typically Results/Discussion); DV and Designer-in-sentence codes are anchored on it. EI and DV are coded independently on distinct criteria — EI from the assertion of spontaneity, DV from the attribution of authorship — so a paper may assert strong emergence while still crediting specific design choices.
 
 ---
 

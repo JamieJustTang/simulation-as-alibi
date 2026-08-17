@@ -1,8 +1,32 @@
 # Bias, Polarization & Inequality
 
+> **Tang, S., & Lin, Z. (2026).** *Simulation as Alibi—How the Social Order Gets Outsourced to LLM Agents.* Ninth AAAI/ACM Conference on Artificial Intelligence, Ethics and Society (AIES-26), camera-ready. Corresponding author: jamietang@ruc.edu.cn.
+
 *Emergent bias, polarization, stereotyping, and structural inequality*
 
 **29 papers**
+
+---
+
+## Field overview
+
+This category gathers the field's most normatively consequential work — stereotyping, polarization, inequality, deception, and regulatory evasion in LLM populations — organized around four themes. Network-driven inequality: *Gender Dynamics and Homophily* (Chirper.ai, 70,000 agents and 140 million posts) shows gender performance sorting agents through selection and influence; *Emergence of Preferential Attachment and Glass-Ceiling Effects* proves centrality disparities converge to a stable, type-dependent equilibrium; *Homophily-induced emergence of biased structures* traces the same concentration to homophilic link formation. The shared finding is that inequality is not a model property but a network property — produced by the link-formation rule the designers set.
+
+Polarization forms the second theme. *Emergence of human-like polarization* and LMAgent document echo chambers and opinion segregation emerging from networked conversation, with homophilic clustering and echo-chamber mechanisms reproducing real-world dynamics at scale. The third theme is stereotyping: *Your AI Bosses Are Still Prejudiced* and *The Social Cost of Intelligence* show hierarchical and multi-agent settings amplifying stereotypes that single models suppress, and track their propagation across interaction rounds. The fourth is evasion and deception: *Hidden in Plain Text* (steganographic collusion), *Is Lying an Emergent Behaviour*, and *Language Evolution for Evading Social Media Regulation* show agents developing covert signaling under moderation pressure — coordination in the service of evasion rather than cooperation.
+
+Two cross-cutting lines deepen the theme. One is value and belief heterogeneity: *On the Dynamics of Multi-Agent LLM Communities Driven by Value Diversity*, belief-coevolution studies, and cognitive-heterogeneity supply-chain simulations all treat variance in agent design as the lever that shifts collective outcomes. The other is organizational and market realism: *TwinMarket*, long-horizon organizational dynamics, and information-asymmetry market studies test whether LLM populations reproduce the biased structures of real institutions.
+
+What distinguishes this category in the audit is its inversion of the corpus-wide pattern: the strongest emergence claims coincide with the most designer-visible explanations. Sixteen of 29 papers are High-EI, yet 19 of 29 are DV=Full — the designer appears as causal subject in 19 explanation sentences. Bias, in this literature, is almost always traced to an authored condition: a homophily term, a value-diversity parameter, a hierarchical decision structure, a moderated-channel affordance. This is precisely the terrain on which the paper's "accountability displacement" mechanism operates — whether inequality is narrated as emergent or as designed is not a rhetorical distinction but a distributional one, because the answer determines whether anyone can be held responsible for it.
+
+## Coding dimensions
+
+- **EI — Emergence intensity** (`Low` / `Medium` / `High`, coded 1/2/3): how strongly, and with how little qualification, a paper asserts that behavior arises spontaneously. *High* asserts emergence as an established fact ("norms spontaneously emerged"); *Medium* presents it as an interpretive finding with hedging ("our results suggest the emergence of…"); *Low* mentions emergence only as a secondary observation.
+- **DV — Designer visibility** (`Absent` / `Partial` / `Full`, coded 1/2/3): how explicitly a paper attributes the interaction architecture to identifiable design choices, anchored on the emergence explanation sentence. *Full* names a design choice as the causal subject ("removing memory prevents the emergence of stable cooperation"); *Partial* discloses the architecture in the methods but the explanation sentence does not return to the designer; *Absent* narrates emergence as spontaneous, self-organized, or population-level ("norms emerged naturally from interactions"). Risk, governance, and ethical discussions do not count as evidence.
+- **Designer in explanation sentence** (`Yes` / `No`): whether the designer or a design choice appears in the emergence explanation sentence as a causal subject.
+- **DP — Deployment proximity** (`1` = research only, `2` = deployment implied): whether emergence is discussed only in a research context, or in a deployment/policy context (commercial applications, governance recommendations, policy citations).
+- **RT — Regulatory translatability** (`1` = Low, `2` = Medium, `3` = High): how readily a paper's description of emergent behavior translates into governance obligations. High is directly translatable; Medium is partially translatable but missing key information; Low is too abstract to yield concrete governance requirements.
+
+The **emergence explanation sentence** is the sentence in which a paper explains *why* an emergent phenomenon occurs (typically Results/Discussion); DV and Designer-in-sentence codes are anchored on it. EI and DV are coded independently on distinct criteria — EI from the assertion of spontaneity, DV from the attribution of authorship — so a paper may assert strong emergence while still crediting specific design choices.
 
 ---
 
