@@ -81,13 +81,6 @@ UDOS is a proposed framework; disclosure alone does not deliver accountability.
   <img src="docs/social_cards/v2/en/03_disclosure.png" alt="Four UDOS questions for researchers, reviewers, funders and policymakers." width="720">
 </p>
 
-**Download:** [English cards for X](docs/social_cards/v2/en/) ·
-[简体中文图片（小红书）](docs/social_cards/v2/zh/) ·
-[Posting copy / 发布文案](docs/social_cards/v2/captions.md).
-
-Each set contains three square PNGs. [Sources and generation prompts](docs/social_cards/v2/)
-are included; the [earlier editable SVG cards](docs/social_cards/) remain available.
-
 ---
 
 ## The audited corpus — paper catalog
