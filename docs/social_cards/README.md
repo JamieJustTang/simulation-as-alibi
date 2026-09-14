@@ -1,5 +1,9 @@
 # Simulation as Alibi — shareable visual summary
 
+**Current campaign:** [v2 bilingual cards](v2/) — three English cards for X and three Simplified Chinese cards for Xiaohongshu. The repository homepage now uses these GPT Image posters.
+
+## Earlier vector cards
+
 Three square cards summarize the paper's argument for web and social sharing.
 All statistics and claims are aligned with the final camera-ready paper.
 
@@ -10,7 +14,7 @@ All statistics and claims are aligned with the final camera-ready paper.
 3. [Mechanism + solution](03_mechanism_udos.svg): the Alibi Function and UDOS
    as a mirrored problem/solution pair.
 
-The repository homepage uses the PNG exports. For the EI × DV card, it uses
+The previous repository homepage used the PNG exports. For the EI × DV card, it used
 [`02_ei_dv_audit_editorial.png`](02_ei_dv_audit_editorial.png), the approved
 editorial layout with a visually quieter association-test strip. The
 data-reproducible SVG and PNG remain available separately.

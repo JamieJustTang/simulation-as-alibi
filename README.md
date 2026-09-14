@@ -47,42 +47,46 @@ authorship — and proposes Upstream Disclosure Obligations for Agent Societies
 
 ## Research highlights
 
-> **LLM social simulations do not simply reveal social order. Their
-> architectures help produce it, but current AI governance rarely requires
-> simulation designers to disclose those choices.**
+> **AI simulates society. Who wrote the rules?**
+>
+> Emergence can be real. Its conditions are still designed. Our paper asks how
+> those design choices disappear from accountability, and what upstream
+> disclosure could make visible.
 
-### A governance gap with growing stakes
-
-LLM social simulations now model public opinion, markets, and crisis response.
-Their outputs can inform high-stakes decisions, but governance frameworks do
-not yet capture procedural authorship.
+### 1. The rules behind the simulation
 
 <p align="center">
-  <img src="docs/social_cards/01_pain_point.png" alt="Governance gaps and rising stakes in LLM social simulation" width="720">
+  <img src="docs/social_cards/v2/en/01_rules.png" alt="A hand reveals the designed rules beneath a simulated society. Who wrote the rules?" width="720">
 </p>
 
-### Designer erasure in the literature
+### 2. Evidence from 142 papers
 
-Our audit of 142 papers finds that designer erasure concentrates where claims
-of emergence are strongest. Fourteen of the 17 papers with absent designer
-visibility fall in the High-EI group.
+Of the 17 papers with absent designer attribution in their emergence
+explanation, 14 make the strongest emergence claims. This is **82% of the
+absent-attribution group**, not 82% of the entire corpus. The single-coder,
+preprint-heavy sample limits generalization.
 
 <p align="center">
-  <img src="docs/social_cards/02_ei_dv_audit_editorial.png" alt="Emergence intensity by designer visibility audit matrix for 142 papers" width="720">
+  <img src="docs/social_cards/v2/en/02_evidence.png" alt="Absent designer attribution by emergence intensity: Low 2/36 (5.6%), Medium 1/49 (2.0%), High 14/57 (24.6%)." width="720">
 </p>
 
-### From diagnosis to disclosure
+### 3. Four questions for upstream disclosure
 
-The *Alibi Function* identifies three mechanisms: epistemic laundering,
-accountability displacement, and legitimacy extraction. UDOS requires
-researchers to disclose the interaction architecture before outputs travel.
+UDOS asks who can interact, what actions are allowed, who enforces the rules,
+and whose interests the design serves. None of the six governance frameworks
+examined in the paper explicitly required procedural-authorship disclosure.
+UDOS is a proposed framework; disclosure alone does not deliver accountability.
 
 <p align="center">
-  <img src="docs/social_cards/03_mechanism_udos.png" alt="The Alibi Function and Upstream Disclosure Obligations for Agent Societies" width="720">
+  <img src="docs/social_cards/v2/en/03_disclosure.png" alt="Four UDOS questions for researchers, reviewers, funders and policymakers." width="720">
 </p>
 
-*Download the editable figures or reproduce them from
-[docs/social_cards](docs/social_cards/).*
+**Download:** [English cards for X](docs/social_cards/v2/en/) ·
+[简体中文图片（小红书）](docs/social_cards/v2/zh/) ·
+[Posting copy / 发布文案](docs/social_cards/v2/captions.md).
+
+Each set contains three square PNGs. [Sources and generation prompts](docs/social_cards/v2/)
+are included; the [earlier editable SVG cards](docs/social_cards/) remain available.
 
 ---
 
