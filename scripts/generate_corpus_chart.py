@@ -1,83 +1,121 @@
 #!/usr/bin/env python3
-"""Generate the editorial-style, dependency-free SVG used in the README."""
+"""Render the README corpus chart from the recorded coding data (matplotlib).
 
+Run from any directory. --preview-dir exports 350/700/1050 px QA views.
+Publication groups preserve the repository's existing venue-based coding;
+this script does not independently verify publication or peer-review status.
+"""
+
+import argparse
+from collections import Counter
+from html import escape
+import json
 from pathlib import Path
 
-YEARS = (2023, 2024, 2025, 2026)
-PEER_REVIEWED = (4, 6, 11, 8)
-PREPRINTS = (0, 10, 32, 68)
-TOTALS = tuple(a + b for a, b in zip(PEER_REVIEWED, PREPRINTS))
-WIDTH, HEIGHT = 900, 900
-LEFT, RIGHT, TOP, BASELINE = 82, 42, 270, 740
-PLOT_WIDTH, PLOT_HEIGHT = WIDTH - LEFT - RIGHT, BASELINE - TOP
-MAX_VALUE = 80
-INK, MUTED, GRID = "#17212B", "#68737D", "#DCE2E3"
-PAPER, CARD = "#F5F2EB", "#FFFEFB"
-PEER, PREPRINT, ACCENT = "#416F75", "#D98B3A", "#9E3F2E"
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+from matplotlib.patches import Rectangle
+
+ROOT = Path(__file__).resolve().parents[1]
+INK, MUTED, GRID = '#17252B', '#47585E', '#DDE4E5'
+PEER, PREPRINT = '#24666C', '#C85B37'
 
 
-def y(value: int) -> float:
-    return BASELINE - PLOT_HEIGHT * value / MAX_VALUE
+def load_counts():
+    records = json.loads((ROOT / 'data/stream1b_systematic_coding/coding_data_142.json').read_text())
+    counts = Counter()
+    omitted = 0
+    for row in records:
+        year = str(row.get('Year', '')).strip()
+        if not year.isdigit():
+            omitted += 1
+            continue
+        venue = str(row.get('Venue', '')).strip()
+        group = 'preprint' if venue in {'arXiv', 'arXiv.org', ''} else 'peer'
+        counts[int(year), group] += 1
+    years = sorted({year for year, _ in counts})
+    return records, years, counts, omitted
 
 
-def main() -> None:
-    out = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}" role="img" aria-labelledby="chart-title chart-desc">',
-        '<title id="chart-title">LLM social simulation is outpacing peer review</title>',
-        '<desc id="chart-desc">Stacked bars show 29 peer-reviewed papers and 110 arXiv preprints from 2023 to 2026. The 2026 bar contains 8 peer-reviewed papers and 68 preprints.</desc>',
-        f'<rect width="{WIDTH}" height="{HEIGHT}" fill="{PAPER}"/>',
-        f'<rect x="20" y="18" width="860" height="864" rx="18" fill="{CARD}" stroke="#E7E1D7"/>',
-        '<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif">',
-        f'<text x="52" y="58" font-size="12" font-weight="700" letter-spacing="1.7" fill="{ACCENT}">LLM SOCIAL SIMULATION · 2023–2026</text>',
-        f'<text x="52" y="92" font-size="24" font-weight="750" fill="{INK}">LLM social simulation is outpacing peer review</text>',
-        f'<text x="52" y="120" font-size="15" fill="{MUTED}">Annual publications in our systematic corpus, by publication status</text>',
-        f'<rect x="638" y="42" width="212" height="92" rx="12" fill="#F3E8DA"/>',
-        f'<text x="656" y="66" font-size="11" font-weight="700" letter-spacing="1.15" fill="{ACCENT}">2026 PREPRINT SURGE</text>',
-        f'<text x="656" y="108" font-size="38" font-weight="760" fill="{INK}">68</text>',
-        f'<text x="714" y="96" font-size="13" font-weight="650" fill="{INK}">preprints</text>',
-        f'<text x="714" y="116" font-size="12" fill="{MUTED}">89% of 2026 output</text>',
-        f'<circle cx="58" cy="174" r="5" fill="{PEER}"/>',
-        f'<text x="70" y="179" font-size="13" fill="{INK}">Peer-reviewed</text>',
-        f'<text x="169" y="179" font-size="13" font-weight="700" fill="{PEER}">29</text>',
-        f'<circle cx="208" cy="174" r="5" fill="{PREPRINT}"/>',
-        f'<text x="220" y="179" font-size="13" fill="{INK}">arXiv preprint</text>',
-        f'<text x="310" y="179" font-size="13" font-weight="700" fill="{PREPRINT}">110</text>',
-        f'<text x="850" y="179" text-anchor="end" font-size="12" fill="{MUTED}">n = 139 with complete chart metadata</text>',
-        f'<rect x="666" y="{TOP - 8}" width="142" height="{PLOT_HEIGHT + 24}" rx="12" fill="#FBF4E9"/>',
-    ]
-    for tick in range(0, MAX_VALUE + 1, 20):
-        ty = y(tick)
-        out += [
-            f'<line x1="{LEFT}" y1="{ty:.1f}" x2="{WIDTH - RIGHT}" y2="{ty:.1f}" stroke="{GRID}" stroke-width="1"/>',
-                f'<text x="{LEFT - 15}" y="{ty + 5:.1f}" text-anchor="end" font-size="13" fill="{MUTED}">{tick}</text>',
-        ]
-    centers, bar_width = (150, 346, 542, 738), 76
-    for year, peer, preprint, total, center in zip(YEARS, PEER_REVIEWED, PREPRINTS, TOTALS, centers):
-        x, peer_h, preprint_h = center - bar_width / 2, PLOT_HEIGHT * peer / MAX_VALUE, PLOT_HEIGHT * preprint / MAX_VALUE
-        total_y = y(total)
-        out.append(f'<rect x="{x:.1f}" y="{TOP:.1f}" width="{bar_width}" height="{PLOT_HEIGHT}" rx="8" fill="#F1F1ED"/>')
-        if preprint:
-            out.append(f'<path d="M{x:.1f},{total_y + 8:.1f} Q{x:.1f},{total_y:.1f} {x + 8:.1f},{total_y:.1f} H{x + bar_width - 8:.1f} Q{x + bar_width:.1f},{total_y:.1f} {x + bar_width:.1f},{total_y + 8:.1f} V{BASELINE - peer_h:.1f} H{x:.1f} Z" fill="{PREPRINT}"/>')
-        out.append(f'<rect x="{x:.1f}" y="{BASELINE - peer_h:.1f}" width="{bar_width}" height="{peer_h:.1f}" fill="{PEER}"/>')
-        out.append(f'<text x="{center}" y="{total_y - 12:.1f}" text-anchor="middle" font-size="19" font-weight="750" fill="{INK}">{total}</text>')
-        out.append(f'<text x="{center}" y="778" text-anchor="middle" font-size="15" font-weight="650" fill="{INK}">{year}</text>')
-        if peer >= 6:
-            out.append(f'<text x="{center}" y="{BASELINE - peer_h / 2 + 5:.1f}" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">{peer}</text>')
-        if preprint >= 10:
-            out.append(f'<text x="{center}" y="{total_y + preprint_h / 2 + 5:.1f}" text-anchor="middle" font-size="13" font-weight="700" fill="#4D2C12">{preprint}</text>')
-    out += [
-        f'<text x="35" y="505" text-anchor="middle" font-size="12" fill="{MUTED}" transform="rotate(-90 35 505)">NUMBER OF PAPERS</text>',
-        f'<path d="M385 364 C455 330, 565 322, 654 338" fill="none" stroke="{ACCENT}" stroke-width="1.5" stroke-dasharray="4 5"/>',
-        f'<path d="M645 331 L656 338 L645 344" fill="none" stroke="{ACCENT}" stroke-width="1.5"/>',
-        f'<text x="520" y="306" text-anchor="middle" font-size="12" font-weight="700" fill="{ACCENT}">4.8× MORE PAPERS THAN 2024</text>',
-        f'<line x1="52" y1="812" x2="848" y2="812" stroke="#E7E1D7"/>',
-        f'<text x="52" y="840" font-size="11" fill="{MUTED}">Data: systematic coding corpus (n = 142); three records without a year are excluded from the chart.</text>',
-        f'<text x="52" y="862" font-size="11" font-weight="650" fill="{INK}">Citation: Tang, S. &amp; Lin, Z. (2026). Simulation as Alibi: How the Social Order Gets Outsourced to LLM Agents. AIES ’26.</text>',
-        '</g>', '</svg>',
-    ]
-    target = Path(__file__).resolve().parents[1] / "docs" / "corpus_by_year.svg"
-    target.write_text("\n".join(out) + "\n", encoding="utf-8")
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--preview-dir', type=Path)
+    args = parser.parse_args()
+    records, years, counts, omitted = load_counts()
+    if len(years) != 4:
+        raise ValueError('This four-year layout needs adjustment for the updated corpus.')
+    totals = [counts[y, 'peer'] + counts[y, 'preprint'] for y in years]
+    peer = sum(counts[y, 'peer'] for y in years)
+    preprint = sum(counts[y, 'preprint'] for y in years)
+    plt.rcParams.update({'font.family': 'DejaVu Sans', 'svg.fonttype': 'none',
+                         'svg.hashsalt': 'simulation-as-alibi-corpus',
+                         'text.color': INK})
+    fig = plt.figure(figsize=(7, 7), facecolor='white')
+
+    def text(x, y, s, size=16, color=INK, weight='normal', **kw):
+        return fig.text(x, y, s, fontsize=size, color=color, weight=weight, **kw)
+
+    text(.07, .936, 'THE RESEARCH CORPUS', 13, PEER, 'bold')
+    text(.07, .855, 'Growth led by preprints', 25, INK, 'bold')
+    text(.07, .806, 'LLM social simulation · papers by year', 15, MUTED)
+    for x, color, label in [(.07, PEER, f'{peer} peer-reviewed'), (.52, PREPRINT, f'{preprint} preprints')]:
+        fig.add_artist(Rectangle((x, .741), .023, .023, transform=fig.transFigure,
+                                 facecolor=color, edgecolor='none'))
+        text(x + .035, .742, label, 16, weight='bold')
+
+    ax = fig.add_axes([.205, .24, .68, .405])
+    scale_max = ((max(totals) + 19) // 20) * 20
+    ax.set_xlim(0, scale_max)
+    ax.set_ylim(-.4, 3.8)
+    ax.set_yticks([])
+    ax.set_xticks(range(0, scale_max + 1, 20))
+    ax.tick_params(axis='x', colors=MUTED, labelsize=13, length=0, pad=8)
+    ax.set_axisbelow(True)
+    ax.grid(axis='x', color=GRID, linewidth=.7)
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+    for i, (year, total) in enumerate(zip(years, totals)):
+        yy = 3.25 - i
+        a, b = counts[year, 'peer'], counts[year, 'preprint']
+        ax.barh(yy, a, height=.27, color=PEER)
+        ax.barh(yy, b, left=a, height=.27, color=PREPRINT)
+        ax.text(-.07, yy, str(year), transform=ax.get_yaxis_transform(),
+                ha='right', va='center', fontsize=17, weight='bold', color=INK)
+        ax.text(total + 1.5, yy, str(total), va='center', fontsize=17,
+                weight='bold', clip_on=False, color=INK)
+        ax.text(0, yy - .40, f'{a} peer-reviewed + {b} preprints',
+                fontsize=16, color=MUTED, va='center')
+    text(.205, .165, 'Number of papers', 13, MUTED)
+    fig.add_artist(plt.Line2D([.07, .94], [.133, .133], transform=fig.transFigure,
+                              color=GRID, linewidth=1))
+    text(.07, .098, f'{len(records)} papers; {omitted} without a year omitted.', 14, MUTED)
+    text(.07, .058, 'Corpus snapshot, not a full-field census.', 14, MUTED)
+    text(.07, .018, 'Tang & Lin · Simulation as Alibi · AIES 2026', 12, MUTED)
+
+    target = ROOT / 'docs/corpus_by_year'
+    description = (f'Corpus snapshot with {len(records)} papers, {omitted} missing years excluded. '
+                   f'Publication groups follow recorded venue coding. ' + '; '.join(
+                       f'{year}: {counts[year, "peer"]} peer-reviewed, '
+                       f'{counts[year, "preprint"]} preprints, total {total}'
+                       for year, total in zip(years, totals)))
+    fig.savefig(target.with_suffix('.svg'), metadata={'Date': None, 'Description': description})
+    svg_path = target.with_suffix('.svg')
+    svg = svg_path.read_text()
+    # Keep the standalone SVG scalable, editable and screen-reader accessible.
+    svg = svg.replace('<svg ', '<svg role="img" aria-labelledby="chart-title chart-desc" ', 1)
+    start = svg.index('>', svg.index('<svg ')) + 1
+    svg = (svg[:start] + '\n<title id="chart-title">Growth led by preprints</title>'
+           + f'\n<desc id="chart-desc">{escape(description)}</desc>' + svg[start:])
+    svg_path.write_text("\n".join(line.rstrip() for line in svg.splitlines()) + "\n")
+    fig.savefig(target.with_suffix('.png'), dpi=200, metadata={'Description': description})
+    if args.preview_dir:
+        args.preview_dir.mkdir(parents=True, exist_ok=True)
+        for pixels in (350, 700, 1050):
+            fig.savefig(args.preview_dir / f'corpus-{pixels}.png', dpi=pixels / 7)
+    print(description)
+    plt.close(fig)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

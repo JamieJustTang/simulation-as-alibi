@@ -15,9 +15,13 @@ It serves three purposes:
 
 ---
 
-## The field, in one chart
+## The corpus, in one chart
 
-![Corpus by year and publication status](docs/corpus_by_year.svg)
+<p align="center">
+  <img src="docs/corpus_by_year.svg" alt="Recorded corpus by year: 2023, 4 peer-reviewed and 0 preprints; 2024, 6 and 10; 2025, 11 and 32; 2026, 8 and 68. Three records lack a year." width="720">
+</p>
+
+[Download PNG](docs/corpus_by_year.png) · [Chart data and method](docs/corpus_chart.md)
 
 The systematic coding corpus tracks the rapid expansion of LLM agent society
 research. Peer-reviewed papers (29) span 2023–2026 steadily; arXiv preprints
