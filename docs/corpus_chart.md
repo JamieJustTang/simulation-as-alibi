@@ -1,11 +1,13 @@
 # Corpus by year
 
-[SVG](corpus_by_year.svg) · [1400 × 1400 PNG](corpus_by_year.png)
+[English SVG](corpus_by_year.svg) · [English PNG](corpus_by_year.png) · [中文版 SVG](corpus_by_year_zh.svg) · [中文版 PNG](corpus_by_year_zh.png)
+
+Both PNG exports are 1400 × 1400 pixels.
 
 The square chart uses horizontal stacked bars, a shared zero baseline, direct
 totals, and a text breakdown beside each year. The README limits its width to
 720 pixels; it scales down with the available space on smaller screens. SVG
-text stays editable and the image includes a screen-reader description.
+text stays editable in the English export. The Chinese SVG uses glyph outlines to avoid missing fonts on other devices. Both include localized screen-reader descriptions.
 
 | Year | Peer-reviewed group | Preprint group | Total |
 |---|---:|---:|---:|
@@ -37,7 +39,14 @@ With Python and matplotlib installed, run from the repository root:
 python3 scripts/generate_corpus_chart.py
 ```
 
-This generates both SVG and PNG from the same figure. For optional visual
+This generates both SVG and PNG from the same figure. To generate the Simplified Chinese version:
+
+```bash
+python3 scripts/generate_corpus_chart.py --lang zh
+```
+
+Chinese generation requires one of Heiti SC, Noto Sans CJK SC, Microsoft YaHei,
+or SimHei. The same data and layout are used for both languages. For optional visual
 checks at 350, 700 and 1050 pixels wide:
 
 ```bash
