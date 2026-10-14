@@ -13,6 +13,26 @@ It serves three purposes:
 3. **The coding protocol**: the emergence-explanation-sentence rubric behind
    the designer-visibility (DV) dimension.
 
+## Authors, contact, and research interests
+
+### Shiyun “Jamie” TANG 唐诗韵
+
+- **Email:** [jamietang@ruc.edu.cn](mailto:jamietang@ruc.edu.cn)
+- **Position:** PhD candidate, Political Economy
+- **Affiliation:** School of Economics, Renmin University of China
+- **DBLP:** [dblp.org/pid/268/5110.html](https://dblp.org/pid/268/5110.html)
+- **Research interests:** LLM social simulation; digital and labor issues; classical political philosophy
+
+### Zezheng “Jason” LIN 林泽正
+
+- **Email:** [zezhenglin@uchicago.edu](mailto:zezhenglin@uchicago.edu)
+- **Position:** M.S. Candidate, Computational Analysis and Public Policy (MSCAPP)
+- **Affiliation:** Harris School of Public Policy, University of Chicago
+- **Awards:** T.C. Young Scholar (sole awardee, 2025 cohort); Point Foundation Persistence Scholar (2026 cohort)
+- **ORCID:** [0009-0004-1217-4486](https://orcid.org/0009-0004-1217-4486)
+- **Google Scholar:** [scholar.google.com/citations?user=LF_p3ycAAAAJ](https://scholar.google.com/citations?hl=en&user=LF_p3ycAAAAJ)
+- **Research interests:** computational social science; public health; sociology; LLM agents
+
 ---
 
 ## The corpus, in one chart
